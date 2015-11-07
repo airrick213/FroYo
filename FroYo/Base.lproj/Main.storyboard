@@ -119,19 +119,41 @@
                                                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-Vi-ZOM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="71.5"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.64313725490196072" green="0.90588235294117647" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-cI-ZI5">
+                                                    <rect key="frame" x="520" y="21" width="52" height="29"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="EHU-Vi-ZOM" firstAttribute="top" secondItem="ffB-8v-YKq" secondAttribute="top" id="1tH-H1-F0h"/>
+                                                <constraint firstItem="EHU-Vi-ZOM" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="5Hb-4k-eCd"/>
                                                 <constraint firstItem="vyl-ga-hpU" firstAttribute="leading" secondItem="ffB-8v-YKq" secondAttribute="leadingMargin" constant="20" id="7Ta-gn-txa"/>
                                                 <constraint firstItem="vyl-ga-hpU" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="89v-by-I4R"/>
                                                 <constraint firstItem="KoF-5W-By2" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="9WT-wp-tsH"/>
                                                 <constraint firstItem="KoF-5W-By2" firstAttribute="leading" secondItem="vyl-ga-hpU" secondAttribute="trailing" constant="20" id="Iyu-aZ-iYa"/>
+                                                <constraint firstItem="EHU-Vi-ZOM" firstAttribute="leading" secondItem="ffB-8v-YKq" secondAttribute="leading" id="Qg0-Mz-i5U"/>
+                                                <constraint firstAttribute="bottom" secondItem="EHU-Vi-ZOM" secondAttribute="bottom" id="YdU-7g-cBM"/>
+                                                <constraint firstAttribute="trailing" secondItem="EHU-Vi-ZOM" secondAttribute="trailing" constant="600" id="gaS-tH-fpL"/>
+                                                <constraint firstItem="9S1-cI-ZI5" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="j9K-ie-tng"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9S1-cI-ZI5" secondAttribute="trailing" constant="20" id="xa6-Zc-yay"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="greenViewLeadingConstraint" destination="Qg0-Mz-i5U" id="yfj-ZM-dpL"/>
+                                            <outlet property="greenViewTrailingConstraint" destination="gaS-tH-fpL" id="79Y-Na-4co"/>
                                             <outlet property="nameLabel" destination="KoF-5W-By2" id="KqB-Ls-EkK"/>
                                             <outlet property="profileImageView" destination="vyl-ga-hpU" id="IUz-Y4-J2u"/>
+                                            <outlet property="sentLabel" destination="9S1-cI-ZI5" id="iQH-3p-ESj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

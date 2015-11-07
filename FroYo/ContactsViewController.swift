@@ -134,3 +134,15 @@ extension ContactsViewController: UITableViewDataSource {
     }
     
 }
+
+extension ContactsViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactsTableViewCell
+        
+        if !cell.selected {
+            cell.setSelected(true, animated: true)
+        }
+    }
+    
+}
