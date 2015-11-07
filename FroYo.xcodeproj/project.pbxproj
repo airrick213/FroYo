@@ -22,6 +22,9 @@
 		07CDBD351BEDAF22000471EC /* FroYoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD341BEDAF22000471EC /* FroYoUITests.swift */; };
 		07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD441BEDCED1000471EC /* ContactsViewController.swift */; };
 		07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD461BEDCED8000471EC /* MapViewController.swift */; };
+		2B8050A71BEDE48B001A6AC8 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */; };
+		2B8050A91BEDF299001A6AC8 /* BDBOAuth1Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8050A81BEDF299001A6AC8 /* BDBOAuth1Manager.framework */; };
+		2B8050AB1BEDF725001A6AC8 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8050AA1BEDF725001A6AC8 /* Business.swift */; };
 		6459F4CDED07D60452775C7B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F7BC82ED7B51CB1E33E0C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		07CDBD441BEDCED1000471EC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		07CDBD461BEDCED8000471EC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		294A7DB66FC61704CF673FF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		2B8050A81BEDF299001A6AC8 /* BDBOAuth1Manager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDBOAuth1Manager.framework; path = "Pods/../build/Debug-iphoneos/BDBOAuth1Manager.framework"; sourceTree = "<group>"; };
+		2B8050AA1BEDF725001A6AC8 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		339D9959D75658FF89A6E457 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8050A91BEDF299001A6AC8 /* BDBOAuth1Manager.framework in Frameworks */,
 				0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */,
 				0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */,
 				0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */,
@@ -130,7 +137,9 @@
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				07CDBD441BEDCED1000471EC /* ContactsViewController.swift */,
 				07CDBD461BEDCED8000471EC /* MapViewController.swift */,
+				2B8050AA1BEDF725001A6AC8 /* Business.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
+				2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */,
 				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
 				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
 				07CDBD201BEDAF22000471EC /* Info.plist */,
@@ -159,6 +168,7 @@
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B8050A81BEDF299001A6AC8 /* BDBOAuth1Manager.framework */,
 				0751C3881BEDD47000E26512 /* Alamofire.framework */,
 				0751C3891BEDD47000E26512 /* Bolts.framework */,
 				0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */,
@@ -362,8 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8050A71BEDE48B001A6AC8 /* YelpClient.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
 				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
+				2B8050AB1BEDF725001A6AC8 /* Business.swift in Sources */,
 				07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +522,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -526,6 +539,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

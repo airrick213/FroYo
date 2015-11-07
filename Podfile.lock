@@ -1,5 +1,29 @@
 PODS:
+  - AFNetworking (2.6.2):
+    - AFNetworking/NSURLConnection (= 2.6.2)
+    - AFNetworking/NSURLSession (= 2.6.2)
+    - AFNetworking/Reachability (= 2.6.2)
+    - AFNetworking/Security (= 2.6.2)
+    - AFNetworking/Serialization (= 2.6.2)
+    - AFNetworking/UIKit (= 2.6.2)
+  - AFNetworking/NSURLConnection (2.6.2):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.2):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.2)
+  - AFNetworking/Security (2.6.2)
+  - AFNetworking/Serialization (2.6.2)
+  - AFNetworking/UIKit (2.6.2):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
   - Alamofire (3.1.2)
+  - BDBOAuth1Manager (1.6.0):
+    - AFNetworking/NSURLConnection (~> 2.6.0)
+    - AFNetworking/NSURLSession (~> 2.6.0)
   - Bolts (1.4.0):
     - Bolts/AppLinks (= 1.4.0)
     - Bolts/Tasks (= 1.4.0)
@@ -22,7 +46,9 @@ PODS:
   - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
+  - AFNetworking
   - Alamofire
+  - BDBOAuth1Manager
   - ConvenienceKit
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -30,7 +56,9 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
+  BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   ConvenienceKit: ba1ad8797897dc0d011676e961a2f3e9b270c841
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
@@ -38,4 +66,4 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2
