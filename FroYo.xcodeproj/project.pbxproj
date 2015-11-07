@@ -15,6 +15,8 @@
 		0751C3941BEDD47000E26512 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38D1BEDD47000E26512 /* MBProgressHUD.framework */; };
 		0751C3951BEDD47000E26512 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38E1BEDD47000E26512 /* SwiftyJSON.framework */; };
 		0751C3971BEDD75E00E26512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C3961BEDD75E00E26512 /* LoginViewController.swift */; };
+		0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C3A01BEDF7A600E26512 /* ContactsTableViewCell.swift */; };
+		0751C3A61BEDFA5600E26512 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */; };
 		07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD141BEDAF22000471EC /* AppDelegate.swift */; };
 		07CDBD1A1BEDAF22000471EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD181BEDAF22000471EC /* Main.storyboard */; };
 		07CDBD1C1BEDAF22000471EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD1B1BEDAF22000471EC /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		0751C38D1BEDD47000E26512 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "Pods/../build/Release-iphoneos/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		0751C38E1BEDD47000E26512 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Release-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		0751C3961BEDD75E00E26512 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0751C3A01BEDF7A600E26512 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKMessengerShareKit.framework"; sourceTree = "<group>"; };
 		07CDBD111BEDAF22000471EC /* FroYo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FroYo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CDBD141BEDAF22000471EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CDBD191BEDAF22000471EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0751C3A61BEDFA5600E26512 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */,
 				0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */,
 				0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */,
@@ -104,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0751C39F1BEDF78900E26512 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0751C3A01BEDF7A600E26512 /* ContactsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		07CDBD081BEDAF22000471EC = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		07CDBD131BEDAF22000471EC /* FroYo */ = {
 			isa = PBXGroup;
 			children = (
+				0751C39F1BEDF78900E26512 /* Views */,
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
 				0751C3961BEDD75E00E26512 /* LoginViewController.swift */,
@@ -162,6 +176,7 @@
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */,
 				0751C3881BEDD47000E26512 /* Alamofire.framework */,
 				0751C3891BEDD47000E26512 /* Bolts.framework */,
 				0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */,
@@ -367,6 +382,7 @@
 			files = (
 				0751C3971BEDD75E00E26512 /* LoginViewController.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
+				0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */,
 				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
 				07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */,
 			);
@@ -514,6 +530,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,6 +547,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

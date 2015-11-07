@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBSDKMessengerShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,22 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7B6D575EBF3EA6A8B4667239BE65FC64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>802D3B1C197FEA0861F5931F7ED43355</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FCECBD4B17D3FC7D31BD4252343B6B7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B9B793F1184919460DBC95CDA97AA2D4</key>
+		<key>8BB3AE475989E4DB9061FA4A56E373F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BA0ED018954B2E035A694BF72506145C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E002C26D3D67A7A45492E941CB73D185</key>
 		<dict>
 			<key>primary</key>
 			<true/>

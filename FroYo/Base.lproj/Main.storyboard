@@ -69,26 +69,98 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XH-4w-idc">
                                 <rect key="frame" x="0.0" y="528" width="600" height="72"/>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="0.28627450980392155" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="Ced-Za-AQ2"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <state key="normal" title="Froyo Store Info">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="9qd-uZ-mJ8" kind="show" identifier="showMap" id="BMk-29-4MR"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search a name" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-JH-fPT">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="84x-nE-Sh0" id="xIp-bU-L3V"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAE-at-pKu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="464"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="72" id="5QP-gJ-toz" customClass="ContactsTableViewCell" customModule="FroYo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QP-gJ-toz" id="ffB-8v-YKq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vyl-ga-hpU">
+                                                    <rect key="frame" x="28" y="6" width="60" height="60"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="f4D-CJ-RtB"/>
+                                                        <constraint firstAttribute="width" constant="60" id="i97-lJ-Wr3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoF-5W-By2">
+                                                    <rect key="frame" x="108" y="21" width="54" height="29"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="vyl-ga-hpU" firstAttribute="leading" secondItem="ffB-8v-YKq" secondAttribute="leadingMargin" constant="20" id="7Ta-gn-txa"/>
+                                                <constraint firstItem="vyl-ga-hpU" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="89v-by-I4R"/>
+                                                <constraint firstItem="KoF-5W-By2" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="9WT-wp-tsH"/>
+                                                <constraint firstItem="KoF-5W-By2" firstAttribute="leading" secondItem="vyl-ga-hpU" secondAttribute="trailing" constant="20" id="Iyu-aZ-iYa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="KoF-5W-By2" id="KqB-Ls-EkK"/>
+                                            <outlet property="profileImageView" destination="vyl-ga-hpU" id="IUz-Y4-J2u"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="84x-nE-Sh0" id="DAs-BI-56x"/>
+                                    <outlet property="delegate" destination="84x-nE-Sh0" id="ut1-hS-DAu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4XH-4w-idc" firstAttribute="top" secondItem="ZAE-at-pKu" secondAttribute="bottom" id="0SS-Lq-CqT"/>
+                            <constraint firstAttribute="trailing" secondItem="4LK-JH-fPT" secondAttribute="trailing" id="1Ak-uf-kxj"/>
                             <constraint firstAttribute="trailing" secondItem="4XH-4w-idc" secondAttribute="trailing" id="2iK-g4-yiB"/>
+                            <constraint firstAttribute="trailing" secondItem="ZAE-at-pKu" secondAttribute="trailing" id="6QW-Ou-0Wr"/>
                             <constraint firstItem="4XH-4w-idc" firstAttribute="leading" secondItem="1uo-pp-VB2" secondAttribute="leading" id="7pg-8d-URk"/>
                             <constraint firstItem="o1y-K9-yYg" firstAttribute="top" secondItem="4XH-4w-idc" secondAttribute="bottom" id="9EX-m7-h8Y"/>
+                            <constraint firstItem="ZAE-at-pKu" firstAttribute="top" secondItem="4LK-JH-fPT" secondAttribute="bottom" id="FcD-Hy-wRn"/>
+                            <constraint firstItem="4LK-JH-fPT" firstAttribute="top" secondItem="DRC-gt-5Pm" secondAttribute="bottom" id="R0j-D6-pN9"/>
+                            <constraint firstItem="4LK-JH-fPT" firstAttribute="leading" secondItem="1uo-pp-VB2" secondAttribute="leading" id="cOb-Y3-A9P"/>
+                            <constraint firstItem="ZAE-at-pKu" firstAttribute="leading" secondItem="1uo-pp-VB2" secondAttribute="leading" id="sgZ-Kq-cjp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="MapIcon" id="aDY-gl-j0z" userLabel="Map">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="froyoStoreButton" destination="4XH-4w-idc" id="hST-Iv-nUo"/>
+                        <outlet property="searchBar" destination="4LK-JH-fPT" id="j2P-TA-fUC"/>
+                        <outlet property="tableView" destination="ZAE-at-pKu" id="JuN-gi-s5i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFq-CL-8wx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
