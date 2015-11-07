@@ -139,10 +139,20 @@ extension MapViewController: MKMapViewDelegate {
   func selectNextFroYo() -> Business {
     froYoCounter += 1
     let localCounter = froYoCounter
-    if froYoCounter == businesses.count - 1 {
+    if froYoCounter > businesses.count - 1 {
       self.froYoCounter = 0
     }
-    return businesses[localCounter]
+    
+    if localCounter >= businesses.count - 1 {
+      return self.businesses[froYoCounter]
+    } else {
+      return self.businesses[localCounter]
+    }
+//    if localCounter > businesses.count -1 {
+//      return self.businesses[froYoCounter]
+//    } else {
+//      return self.businesses[localCounter]
+//    }
     
     
   }
