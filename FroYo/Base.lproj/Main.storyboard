@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Contacts View Controller-->
@@ -57,7 +58,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-wU-gW6">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-wU-gW6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -75,12 +76,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-CI-qPG">
-                                <rect key="frame" x="180" y="132" width="240" height="128"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-CI-qPG">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                             </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aw9-CI-qPG" firstAttribute="top" secondItem="DRA-wU-gW6" secondAttribute="bottom" id="CzF-2k-18E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aw9-CI-qPG" secondAttribute="trailing" constant="-20" id="Meh-Rk-ZEh"/>
+                            <constraint firstAttribute="trailing" secondItem="DRA-wU-gW6" secondAttribute="trailing" id="Xe4-aZ-v9P"/>
+                            <constraint firstItem="0fz-3k-6Xm" firstAttribute="top" secondItem="aw9-CI-qPG" secondAttribute="bottom" id="Yql-nJ-ROr"/>
+                            <constraint firstItem="DRA-wU-gW6" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leading" id="g6z-Rv-0Yk"/>
+                            <constraint firstItem="DRA-wU-gW6" firstAttribute="top" secondItem="ul0-7z-iKM" secondAttribute="top" id="ji5-b8-WBn"/>
+                            <constraint firstItem="aw9-CI-qPG" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" constant="-20" id="oa6-RT-lqt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="aw9-CI-qPG" id="eNg-HV-Pfs"/>
