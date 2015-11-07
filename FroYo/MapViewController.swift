@@ -18,6 +18,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   @IBOutlet weak var froYoSuggestionLabel: UILabel!
   @IBOutlet weak var distanceLabel: UILabel!
   
+  @IBOutlet weak var nextButton: UIButton!
+  @IBOutlet weak var backButton: UIButton!
+  
+  
+  
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
   var selectedTitle: String?
@@ -133,41 +138,30 @@ extension MapViewController: MKMapViewDelegate {
   }
   
   func initialFroYo() -> Business {
+    backButton.enabled = false
     return businesses[froYoCounter]
   }
   
   func selectNextFroYo() -> Business {
     froYoCounter += 1
-    let localCounter = froYoCounter
-    if froYoCounter > businesses.count - 1 {
-      self.froYoCounter = 0
+    if froYoCounter > 0 {
+      backButton.enabled = true
     }
     
-    if localCounter >= businesses.count - 1 {
-      return self.businesses[froYoCounter]
-    } else {
-      return self.businesses[localCounter]
+    if froYoCounter == businesses.count - 1 {
+      nextButton.enabled = false
     }
-//    if localCounter > businesses.count -1 {
-//      return self.businesses[froYoCounter]
-//    } else {
-//      return self.businesses[localCounter]
-//    }
-    
-    
+    return businesses[froYoCounter]
   }
   
   func selectBeforeFroYo() -> Business {
     froYoCounter -= 1
-    let localCounter = froYoCounter
-    if froYoCounter < 0 {
-      self.froYoCounter = businesses.count - 1
+    nextButton.enabled = true
+    
+    if froYoCounter <= 0 {
+      backButton.enabled = false
     }
-    if localCounter < 0 {
-      return businesses[froYoCounter]
-    } else {
-      return businesses[localCounter]
-    }
+    return businesses[froYoCounter]
   }
   
   func updateFroYoAndDistanceLabel(business: Business) {

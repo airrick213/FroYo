@@ -148,9 +148,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="tQP-Lf-gKm" id="PcL-TU-hX4"/>
                         <outlet property="distanceLabel" destination="vQ9-lm-UGg" id="vao-ii-67b"/>
                         <outlet property="froYoSuggestionLabel" destination="FyH-cr-7c3" id="H6N-bn-Gvm"/>
                         <outlet property="mapView" destination="aw9-CI-qPG" id="eNg-HV-Pfs"/>
+                        <outlet property="nextButton" destination="bKF-pw-VAj" id="zAB-7g-Hgq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jT7-W3-tlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
