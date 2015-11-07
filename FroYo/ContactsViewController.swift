@@ -141,7 +141,7 @@ extension ContactsViewController: UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactsTableViewCell
         
         if !cell.selected {
-            cell.setSelected(true, animated: true)
+            cell.selected = true
         }
     }
     

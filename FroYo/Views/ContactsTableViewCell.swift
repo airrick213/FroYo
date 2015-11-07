@@ -15,7 +15,7 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sentLabel: UILabel!
     @IBOutlet weak var greenViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var greenViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet var greenViewWidth: [NSLayoutConstraint]!
     
     var contact: CNContact! {
         didSet {
@@ -34,6 +34,7 @@ class ContactsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        sentLabel.hidden = true
         profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
     }
 
@@ -41,7 +42,6 @@ class ContactsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
         if selected {
             animateSend()
             nameLabel.textColor = UIColor(red: 164.0/255.0, green: 231.0/255.0, blue: 134.0/255.0, alpha: 1.0)
@@ -49,17 +49,21 @@ class ContactsTableViewCell: UITableViewCell {
     }
     
     func animateSend() {
-        sentLabel.hidden = false
-        UIView.animateWithDuration(0.25) {
-            self.greenViewTrailingConstraint.constant = 0
-        }
+        print("text sent!")
         
-        sleep(1)
-        
-        UIView.animateWithDuration(0.25) {
-            self.greenViewLeadingConstraint.constant = self.contentView.frame.width
-        }
-        sentLabel.hidden = true
+//        sentLabel.hidden = false
+//        
+//        UIView.animateWithDuration(1) { () -> Void in
+//            self.greenViewWidth[0].constant = self.contentView.frame.width
+//        }
+//        self.layoutIfNeeded()
+//        
+//        UIView.animateWithDuration(1) { () -> Void in
+//            self.greenViewLeadingConstraint.constant = self.contentView.frame.width
+//        }
+//        self.layoutIfNeeded()
+//        
+//        sentLabel.hidden = true
     }
 
 }

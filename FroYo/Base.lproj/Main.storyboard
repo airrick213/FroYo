@@ -94,7 +94,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="72" id="5QP-gJ-toz" customClass="ContactsTableViewCell" customModule="FroYo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="72" id="5QP-gJ-toz" customClass="ContactsTableViewCell" customModule="FroYo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QP-gJ-toz" id="ffB-8v-YKq">
@@ -123,12 +123,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="71.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.64313725490196072" green="0.90588235294117647" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" id="duY-Fd-Cgr"/>
+                                                    </constraints>
                                                 </view>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-cI-ZI5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sent!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-cI-ZI5">
                                                     <rect key="frame" x="520" y="21" width="52" height="29"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -142,7 +145,6 @@
                                                 <constraint firstItem="KoF-5W-By2" firstAttribute="leading" secondItem="vyl-ga-hpU" secondAttribute="trailing" constant="20" id="Iyu-aZ-iYa"/>
                                                 <constraint firstItem="EHU-Vi-ZOM" firstAttribute="leading" secondItem="ffB-8v-YKq" secondAttribute="leading" id="Qg0-Mz-i5U"/>
                                                 <constraint firstAttribute="bottom" secondItem="EHU-Vi-ZOM" secondAttribute="bottom" id="YdU-7g-cBM"/>
-                                                <constraint firstAttribute="trailing" secondItem="EHU-Vi-ZOM" secondAttribute="trailing" constant="600" id="gaS-tH-fpL"/>
                                                 <constraint firstItem="9S1-cI-ZI5" firstAttribute="centerY" secondItem="ffB-8v-YKq" secondAttribute="centerY" id="j9K-ie-tng"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="9S1-cI-ZI5" secondAttribute="trailing" constant="20" id="xa6-Zc-yay"/>
                                             </constraints>
@@ -150,10 +152,10 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="greenViewLeadingConstraint" destination="Qg0-Mz-i5U" id="yfj-ZM-dpL"/>
-                                            <outlet property="greenViewTrailingConstraint" destination="gaS-tH-fpL" id="79Y-Na-4co"/>
                                             <outlet property="nameLabel" destination="KoF-5W-By2" id="KqB-Ls-EkK"/>
                                             <outlet property="profileImageView" destination="vyl-ga-hpU" id="IUz-Y4-J2u"/>
                                             <outlet property="sentLabel" destination="9S1-cI-ZI5" id="iQH-3p-ESj"/>
+                                            <outletCollection property="greenViewWidth" destination="duY-Fd-Cgr" collectionClass="NSMutableArray" id="KI7-Vk-OAF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -236,6 +238,6 @@
         <image name="Title" width="180" height="53"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wB1-yJ-h5N"/>
+        <segue reference="nGB-Ru-zbl"/>
     </inferredMetricsTieBreakers>
 </document>

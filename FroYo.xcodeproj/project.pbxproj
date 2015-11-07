@@ -155,12 +155,12 @@
 				0751C3A71BEE7D3D00E26512 /* Helpers */,
 				0751C39F1BEDF78900E26512 /* Views */,
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
-				07CDBD181BEDAF22000471EC /* Main.storyboard */,
 				0751C3961BEDD75E00E26512 /* LoginViewController.swift */,
 				07CDBD441BEDCED1000471EC /* ContactsViewController.swift */,
 				07CDBD461BEDCED8000471EC /* MapViewController.swift */,
-				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
+				07CDBD181BEDAF22000471EC /* Main.storyboard */,
 				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
+				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
 				07CDBD201BEDAF22000471EC /* Info.plist */,
 			);
 			path = FroYo;
