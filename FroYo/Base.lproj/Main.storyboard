@@ -76,23 +76,80 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FroYo at..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyH-cr-7c3">
+                                <rect key="frame" x="20" y="44" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKF-pw-VAj">
+                                <rect key="frame" x="20" y="95" width="180" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JZC-tg-N8l"/>
+                                    <constraint firstAttribute="width" constant="180" id="Y8R-tg-onP"/>
+                                </constraints>
+                                <state key="normal" title="Next!"/>
+                                <connections>
+                                    <action selector="nextPlaceButtonAction:" destination="9qd-uZ-mJ8" eventType="touchUpInside" id="CgI-0b-RzD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="___ Miles Away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-lm-UGg">
+                                <rect key="frame" x="20" y="65" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-CI-qPG">
-                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="145" width="600" height="455"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQP-Lf-gKm">
+                                <rect key="frame" x="400" y="95" width="180" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="wCE-fz-hhi"/>
+                                </constraints>
+                                <state key="normal" title="Go Back!"/>
+                                <connections>
+                                    <action selector="previousPlaceButtonAction:" destination="9qd-uZ-mJ8" eventType="touchUpInside" id="DGK-Cm-A4S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tQP-Lf-gKm" secondAttribute="trailing" id="2gd-hn-GFD"/>
+                            <constraint firstItem="aw9-CI-qPG" firstAttribute="top" secondItem="bKF-pw-VAj" secondAttribute="bottom" id="4yA-Yc-6U8"/>
+                            <constraint firstItem="tQP-Lf-gKm" firstAttribute="top" secondItem="vQ9-lm-UGg" secondAttribute="bottom" id="832-cJ-d3y"/>
                             <constraint firstItem="aw9-CI-qPG" firstAttribute="top" secondItem="DRA-wU-gW6" secondAttribute="bottom" id="CzF-2k-18E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aw9-CI-qPG" secondAttribute="trailing" constant="-20" id="Meh-Rk-ZEh"/>
+                            <constraint firstItem="vQ9-lm-UGg" firstAttribute="top" secondItem="FyH-cr-7c3" secondAttribute="bottom" id="O4F-82-ufv"/>
+                            <constraint firstItem="bKF-pw-VAj" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" id="R49-2O-z5z"/>
+                            <constraint firstItem="bKF-pw-VAj" firstAttribute="top" secondItem="FyH-cr-7c3" secondAttribute="bottom" constant="30" id="TA0-eT-nE9"/>
+                            <constraint firstItem="bKF-pw-VAj" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" id="WYU-Ef-ewt"/>
                             <constraint firstAttribute="trailing" secondItem="DRA-wU-gW6" secondAttribute="trailing" id="Xe4-aZ-v9P"/>
                             <constraint firstItem="0fz-3k-6Xm" firstAttribute="top" secondItem="aw9-CI-qPG" secondAttribute="bottom" id="Yql-nJ-ROr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vQ9-lm-UGg" secondAttribute="trailing" id="bvh-MO-nmd"/>
                             <constraint firstItem="DRA-wU-gW6" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leading" id="g6z-Rv-0Yk"/>
                             <constraint firstItem="DRA-wU-gW6" firstAttribute="top" secondItem="ul0-7z-iKM" secondAttribute="top" id="ji5-b8-WBn"/>
+                            <constraint firstItem="aw9-CI-qPG" firstAttribute="top" secondItem="tQP-Lf-gKm" secondAttribute="bottom" id="kvZ-a5-J6K"/>
+                            <constraint firstItem="FyH-cr-7c3" firstAttribute="top" secondItem="DRA-wU-gW6" secondAttribute="bottom" id="lQ3-vF-Jeu"/>
                             <constraint firstItem="aw9-CI-qPG" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" constant="-20" id="oa6-RT-lqt"/>
+                            <constraint firstItem="vQ9-lm-UGg" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" id="snh-lm-k94"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FyH-cr-7c3" secondAttribute="trailing" id="tXG-bm-bZt"/>
+                            <constraint firstItem="FyH-cr-7c3" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leadingMargin" id="yej-WP-SfO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bKF-pw-VAj" secondAttribute="trailing" id="yfF-bh-Xwk"/>
+                            <constraint firstItem="bKF-pw-VAj" firstAttribute="top" secondItem="vQ9-lm-UGg" secondAttribute="bottom" id="zLL-FQ-GKd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="R49-2O-z5z"/>
+                                <exclude reference="yfF-bh-Xwk"/>
+                                <exclude reference="CzF-2k-18E"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="vQ9-lm-UGg" id="vao-ii-67b"/>
+                        <outlet property="froYoSuggestionLabel" destination="FyH-cr-7c3" id="H6N-bn-Gvm"/>
                         <outlet property="mapView" destination="aw9-CI-qPG" id="eNg-HV-Pfs"/>
                     </connections>
                 </viewController>

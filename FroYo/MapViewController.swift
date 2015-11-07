@@ -15,10 +15,16 @@ import MBProgressHUD
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var froYoSuggestionLabel: UILabel!
+  @IBOutlet weak var distanceLabel: UILabel!
+  
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
+  var selectedTitle: String?
   var businesses: [Business]!
-//  var businessCoordinate: CLLocationCoordinate2D
+  var currentUserLocation: CLLocationCoordinate2D?
+  var froYoCounter = 0
+  var refreshCounter = 0
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -42,18 +48,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let locValue: CLLocationCoordinate2D = manager.location!.coordinate
-    centerMapOnLocation(manager.location!)
-    print("your current location is \(locValue.latitude), \(locValue.longitude)")
-    searchAndAddAnnotations(locValue)
+    currentUserLocation = manager.location!.coordinate
+    print("your current location is \(currentUserLocation!.latitude), \(currentUserLocation!.longitude)")
+    searchAndAddAnnotations(currentUserLocation!)
   
     locationManager.stopUpdatingLocation()
+
   }
   
-  func centerMapOnLocation(location: CLLocation) {
+  func centerMapOnLocation(location: CLLocationCoordinate2D) {
     let regionRadius: CLLocationDistance = 1000
-    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2.0, regionRadius * 2.0)
     mapView.setRegion(coordinateRegion, animated: true)
+  }
+  
+  func convertHashLocationToCoordinate(business: Business) -> CLLocationCoordinate2D {
+    let locationHash = business.location!
+    let coordinateHash = locationHash["coordinate"]!
+    let businessLatitude = coordinateHash["latitude"]! as? CLLocationDegrees
+    let businessLongitude = coordinateHash["longitude"]! as? CLLocationDegrees
+    let businessCoordinate = CLLocationCoordinate2DMake(businessLatitude!, businessLongitude!)
+    return businessCoordinate
   }
   
   func searchAndAddAnnotations(location: CLLocationCoordinate2D) {
@@ -61,25 +76,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
       self.businesses = businesses
       
       for business in businesses {
-        let locationHash = business.location!
-        let coordinateHash = locationHash["coordinate"]!
-        let businessLatitude = coordinateHash["latitude"]! as? CLLocationDegrees
-        let businessLongitude = coordinateHash["longitude"]! as? CLLocationDegrees
-        
-        let businessCoordinate = CLLocationCoordinate2DMake(businessLatitude!, businessLongitude!)
-        print(businessCoordinate)
-        
-        let froYoPlacemark = FroYoPlacemark(title: business.name!, subtitle: business.address!, coordinate: businessCoordinate)
+        let froYoPlacemark = FroYoPlacemark(title: business.name!, subtitle: business.address!, coordinate: self.convertHashLocationToCoordinate(business))
         self.mapView.addAnnotation(froYoPlacemark)
+        if self.refreshCounter == 0 {
+          self.updateFroYoAndDistanceLabel(self.initialFroYo())
+        }  
       }
     }
   }
   
+  @IBAction func nextPlaceButtonAction(sender: AnyObject) {
+    updateFroYoAndDistanceLabel(selectNextFroYo())
+  }
+
+  @IBAction func previousPlaceButtonAction(sender: AnyObject) {
+    updateFroYoAndDistanceLabel(selectBeforeFroYo())
+  }
+
   
   
+  func getDistanceInMilesAndUpdateLabel(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) {
+    let location1 = CLLocation(latitude: point1.latitude, longitude: point1.longitude)
+    let location2 = CLLocation(latitude: point2.latitude, longitude: point2.longitude)
+    let distanceInMeters = location2.distanceFromLocation(location1)
+    let metersToMilesConversion = 0.000621371
+    let distanceInMiles = distanceInMeters * metersToMilesConversion
+    let distanceInMilesRounded = round(distanceInMiles * 100.0) / 100.0
+    distanceLabel.text = "\(distanceInMilesRounded) Miles away"
+  }
 }
 
 extension MapViewController: MKMapViewDelegate {
+  
   func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
     if let annotation = annotation as? FroYoPlacemark {
       let identifier = "pin"
@@ -93,8 +121,53 @@ extension MapViewController: MKMapViewDelegate {
         view.canShowCallout = true
         view.calloutOffset = CGPoint(x: -5, y: 5)
       }
+      
+      if annotation.title == selectedTitle {
+        view.pinTintColor = UIColor.greenColor()
+      } else {
+        view.pinTintColor = UIColor.redColor()
+      }
       return view
     }
     return nil
   }
+  
+  func initialFroYo() -> Business {
+    return businesses[froYoCounter]
+  }
+  
+  func selectNextFroYo() -> Business {
+    froYoCounter += 1
+    let localCounter = froYoCounter
+    if froYoCounter == businesses.count - 1 {
+      self.froYoCounter = 0
+    }
+    return businesses[localCounter]
+    
+    
+  }
+  
+  func selectBeforeFroYo() -> Business {
+    froYoCounter -= 1
+    let localCounter = froYoCounter
+    if froYoCounter < 0 {
+      self.froYoCounter = businesses.count - 1
+    }
+    if localCounter < 0 {
+      return businesses[froYoCounter]
+    } else {
+      return businesses[localCounter]
+    }
+  }
+  
+  func updateFroYoAndDistanceLabel(business: Business) {
+    froYoSuggestionLabel.text = "\(businesses[froYoCounter].name!)"
+    selectedTitle = businesses[froYoCounter].name!
+    let businessPinArray = mapView.annotations
+    mapView.removeAnnotations(businessPinArray)
+    mapView.addAnnotations(businessPinArray)
+    centerMapOnLocation(convertHashLocationToCoordinate(business))
+    getDistanceInMilesAndUpdateLabel(currentUserLocation!, point2: convertHashLocationToCoordinate(business))
+  }
+  
 }
