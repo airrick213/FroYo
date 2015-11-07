@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD141BEDAF22000471EC /* AppDelegate.swift */; };
+		07CDBD171BEDAF22000471EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD161BEDAF22000471EC /* ViewController.swift */; };
+		07CDBD1A1BEDAF22000471EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD181BEDAF22000471EC /* Main.storyboard */; };
+		07CDBD1C1BEDAF22000471EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD1B1BEDAF22000471EC /* Assets.xcassets */; };
+		07CDBD1F1BEDAF22000471EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */; };
+		07CDBD2A1BEDAF22000471EC /* FroYoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD291BEDAF22000471EC /* FroYoTests.swift */; };
+		07CDBD351BEDAF22000471EC /* FroYoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD341BEDAF22000471EC /* FroYoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07CDBD261BEDAF22000471EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07CDBD091BEDAF22000471EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07CDBD101BEDAF22000471EC;
+			remoteInfo = FroYo;
+		};
+		07CDBD311BEDAF22000471EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07CDBD091BEDAF22000471EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07CDBD101BEDAF22000471EC;
+			remoteInfo = FroYo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07CDBD111BEDAF22000471EC /* FroYo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FroYo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CDBD141BEDAF22000471EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		07CDBD161BEDAF22000471EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07CDBD191BEDAF22000471EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		07CDBD1B1BEDAF22000471EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07CDBD1E1BEDAF22000471EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		07CDBD201BEDAF22000471EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07CDBD251BEDAF22000471EC /* FroYoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroYoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CDBD291BEDAF22000471EC /* FroYoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroYoTests.swift; sourceTree = "<group>"; };
+		07CDBD2B1BEDAF22000471EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07CDBD301BEDAF22000471EC /* FroYoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroYoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CDBD341BEDAF22000471EC /* FroYoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroYoUITests.swift; sourceTree = "<group>"; };
+		07CDBD361BEDAF22000471EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07CDBD0E1BEDAF22000471EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD221BEDAF22000471EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD2D1BEDAF22000471EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07CDBD081BEDAF22000471EC = {
+			isa = PBXGroup;
+			children = (
+				07CDBD131BEDAF22000471EC /* FroYo */,
+				07CDBD281BEDAF22000471EC /* FroYoTests */,
+				07CDBD331BEDAF22000471EC /* FroYoUITests */,
+				07CDBD121BEDAF22000471EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07CDBD121BEDAF22000471EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07CDBD111BEDAF22000471EC /* FroYo.app */,
+				07CDBD251BEDAF22000471EC /* FroYoTests.xctest */,
+				07CDBD301BEDAF22000471EC /* FroYoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07CDBD131BEDAF22000471EC /* FroYo */ = {
+			isa = PBXGroup;
+			children = (
+				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
+				07CDBD161BEDAF22000471EC /* ViewController.swift */,
+				07CDBD181BEDAF22000471EC /* Main.storyboard */,
+				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
+				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
+				07CDBD201BEDAF22000471EC /* Info.plist */,
+			);
+			path = FroYo;
+			sourceTree = "<group>";
+		};
+		07CDBD281BEDAF22000471EC /* FroYoTests */ = {
+			isa = PBXGroup;
+			children = (
+				07CDBD291BEDAF22000471EC /* FroYoTests.swift */,
+				07CDBD2B1BEDAF22000471EC /* Info.plist */,
+			);
+			path = FroYoTests;
+			sourceTree = "<group>";
+		};
+		07CDBD331BEDAF22000471EC /* FroYoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				07CDBD341BEDAF22000471EC /* FroYoUITests.swift */,
+				07CDBD361BEDAF22000471EC /* Info.plist */,
+			);
+			path = FroYoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07CDBD101BEDAF22000471EC /* FroYo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CDBD391BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYo" */;
+			buildPhases = (
+				07CDBD0D1BEDAF22000471EC /* Sources */,
+				07CDBD0E1BEDAF22000471EC /* Frameworks */,
+				07CDBD0F1BEDAF22000471EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FroYo;
+			productName = FroYo;
+			productReference = 07CDBD111BEDAF22000471EC /* FroYo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07CDBD241BEDAF22000471EC /* FroYoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CDBD3C1BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYoTests" */;
+			buildPhases = (
+				07CDBD211BEDAF22000471EC /* Sources */,
+				07CDBD221BEDAF22000471EC /* Frameworks */,
+				07CDBD231BEDAF22000471EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07CDBD271BEDAF22000471EC /* PBXTargetDependency */,
+			);
+			name = FroYoTests;
+			productName = FroYoTests;
+			productReference = 07CDBD251BEDAF22000471EC /* FroYoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		07CDBD2F1BEDAF22000471EC /* FroYoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07CDBD3F1BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYoUITests" */;
+			buildPhases = (
+				07CDBD2C1BEDAF22000471EC /* Sources */,
+				07CDBD2D1BEDAF22000471EC /* Frameworks */,
+				07CDBD2E1BEDAF22000471EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07CDBD321BEDAF22000471EC /* PBXTargetDependency */,
+			);
+			name = FroYoUITests;
+			productName = FroYoUITests;
+			productReference = 07CDBD301BEDAF22000471EC /* FroYoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07CDBD091BEDAF22000471EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = EKEY;
+				TargetAttributes = {
+					07CDBD101BEDAF22000471EC = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					07CDBD241BEDAF22000471EC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 07CDBD101BEDAF22000471EC;
+					};
+					07CDBD2F1BEDAF22000471EC = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 07CDBD101BEDAF22000471EC;
+					};
+				};
+			};
+			buildConfigurationList = 07CDBD0C1BEDAF22000471EC /* Build configuration list for PBXProject "FroYo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07CDBD081BEDAF22000471EC;
+			productRefGroup = 07CDBD121BEDAF22000471EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07CDBD101BEDAF22000471EC /* FroYo */,
+				07CDBD241BEDAF22000471EC /* FroYoTests */,
+				07CDBD2F1BEDAF22000471EC /* FroYoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07CDBD0F1BEDAF22000471EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CDBD1F1BEDAF22000471EC /* LaunchScreen.storyboard in Resources */,
+				07CDBD1C1BEDAF22000471EC /* Assets.xcassets in Resources */,
+				07CDBD1A1BEDAF22000471EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD231BEDAF22000471EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD2E1BEDAF22000471EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07CDBD0D1BEDAF22000471EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CDBD171BEDAF22000471EC /* ViewController.swift in Sources */,
+				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD211BEDAF22000471EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CDBD2A1BEDAF22000471EC /* FroYoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07CDBD2C1BEDAF22000471EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CDBD351BEDAF22000471EC /* FroYoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07CDBD271BEDAF22000471EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07CDBD101BEDAF22000471EC /* FroYo */;
+			targetProxy = 07CDBD261BEDAF22000471EC /* PBXContainerItemProxy */;
+		};
+		07CDBD321BEDAF22000471EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07CDBD101BEDAF22000471EC /* FroYo */;
+			targetProxy = 07CDBD311BEDAF22000471EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07CDBD181BEDAF22000471EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07CDBD191BEDAF22000471EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07CDBD1E1BEDAF22000471EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07CDBD371BEDAF22000471EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07CDBD381BEDAF22000471EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07CDBD3A1BEDAF22000471EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FroYo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07CDBD3B1BEDAF22000471EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FroYo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		07CDBD3D1BEDAF22000471EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FroYoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FroYo.app/FroYo";
+			};
+			name = Debug;
+		};
+		07CDBD3E1BEDAF22000471EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FroYoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FroYo.app/FroYo";
+			};
+			name = Release;
+		};
+		07CDBD401BEDAF22000471EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FroYoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FroYo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		07CDBD411BEDAF22000471EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FroYoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FroYo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07CDBD0C1BEDAF22000471EC /* Build configuration list for PBXProject "FroYo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CDBD371BEDAF22000471EC /* Debug */,
+				07CDBD381BEDAF22000471EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07CDBD391BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CDBD3A1BEDAF22000471EC /* Debug */,
+				07CDBD3B1BEDAF22000471EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07CDBD3C1BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CDBD3D1BEDAF22000471EC /* Debug */,
+				07CDBD3E1BEDAF22000471EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07CDBD3F1BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CDBD401BEDAF22000471EC /* Debug */,
+				07CDBD411BEDAF22000471EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07CDBD091BEDAF22000471EC /* Project object */;
+}
