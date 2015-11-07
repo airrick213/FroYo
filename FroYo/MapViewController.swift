@@ -57,12 +57,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   }
   
   func searchAndAddAnnotations(location: CLLocationCoordinate2D) {
-    Business.searchWithLocation(location, sort: .Distance, categories: ["icecream"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
+    Business.searchWithLocation(location, sort: .Distance, categories: nil, deals: false) { (businesses: [Business]!, error: NSError!) -> Void in
       self.businesses = businesses
       
       for business in businesses {
-        print(business.name!)
-        print(business.address!)
         let locationHash = business.location!
         let coordinateHash = locationHash["coordinate"]!
         let businessLatitude = coordinateHash["latitude"]! as? CLLocationDegrees

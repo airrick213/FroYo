@@ -58,7 +58,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
   func searchWithLocation(location: CLLocationCoordinate2D, sort: YelpSortMode?, categories: [String]?, deals: Bool?, completion: ([Business]!, NSError!) -> Void) -> AFHTTPRequestOperation {
     
     // Default the location to San Francisco
-    var parameters: [String : AnyObject] = ["term": "food", "ll": "\(location.latitude),\(location.longitude)"]
+    var parameters: [String : AnyObject] = ["term": "frozen yogurt", "ll": "\(location.latitude),\(location.longitude)"]
     
     if sort != nil {
       parameters["sort"] = sort!.rawValue
