@@ -17,6 +17,7 @@
 		0751C3971BEDD75E00E26512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C3961BEDD75E00E26512 /* LoginViewController.swift */; };
 		0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C3A01BEDF7A600E26512 /* ContactsTableViewCell.swift */; };
 		0751C3A61BEDFA5600E26512 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */; };
+		0751C3A91BEE7D4B00E26512 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0751C3A81BEE7D4B00E26512 /* AlertHelper.swift */; };
 		07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD141BEDAF22000471EC /* AppDelegate.swift */; };
 		07CDBD1A1BEDAF22000471EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD181BEDAF22000471EC /* Main.storyboard */; };
 		07CDBD1C1BEDAF22000471EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD1B1BEDAF22000471EC /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		0751C3961BEDD75E00E26512 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0751C3A01BEDF7A600E26512 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKMessengerShareKit.framework"; sourceTree = "<group>"; };
+		0751C3A81BEE7D4B00E26512 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		07CDBD111BEDAF22000471EC /* FroYo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FroYo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CDBD141BEDAF22000471EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CDBD191BEDAF22000471EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +119,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0751C3A71BEE7D3D00E26512 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0751C3A81BEE7D4B00E26512 /* AlertHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		07CDBD081BEDAF22000471EC = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +152,7 @@
 		07CDBD131BEDAF22000471EC /* FroYo */ = {
 			isa = PBXGroup;
 			children = (
+				0751C3A71BEE7D3D00E26512 /* Helpers */,
 				0751C39F1BEDF78900E26512 /* Views */,
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
@@ -380,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0751C3A91BEE7D4B00E26512 /* AlertHelper.swift in Sources */,
 				0751C3971BEDD75E00E26512 /* LoginViewController.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
 				0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */,
