@@ -20,6 +20,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
       super.viewDidLoad()
       locationManager.delegate = self
       locationManager.requestAlwaysAuthorization()
+      locationManager.requestWhenInUseAuthorization()
+      
+      if CLLocationManager.locationServicesEnabled() {
+        locationManager.startUpdatingLocation()
+      }
       
     }
 
@@ -29,6 +34,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
   
   func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     mapView.showsUserLocation = (status == .AuthorizedAlways)
+  }
+  
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let locValue: CLLocationCoordinate2D = manager.location!.coordinate
+    centerMapOnLocation(manager.location!)
+    print("your current location is \(locValue.latitude), \(locValue.longitude)")
+    locationManager.stopUpdatingLocation()
+  }
+  
+  func centerMapOnLocation(location: CLLocation) {
+    let regionRadius: CLLocationDistance = 1000
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+    mapView.setRegion(coordinateRegion, animated: true)
   }
 
 }
