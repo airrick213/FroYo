@@ -13,11 +13,13 @@ class FroYoPlacemark: NSObject, MKAnnotation {
   let title: String?
   let subtitle: String?
   let froYoCoordinate: CLLocationCoordinate2D?
+  let business: Business?
   
-  init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+  init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D, business: Business) {
     self.title = title
     self.subtitle = subtitle
     self.froYoCoordinate = coordinate
+    self.business = business
     
     super.init()
   }

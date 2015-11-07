@@ -81,7 +81,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
       self.businesses = businesses
       
       for business in businesses {
-        let froYoPlacemark = FroYoPlacemark(title: business.name!, subtitle: business.address!, coordinate: self.convertHashLocationToCoordinate(business))
+        let froYoPlacemark = FroYoPlacemark(title: business.name!, subtitle: business.address!, coordinate: self.convertHashLocationToCoordinate(business), business: business)
+        
         self.mapView.addAnnotation(froYoPlacemark)
         if self.refreshCounter == 0 {
           self.updateFroYoAndDistanceLabel(self.initialFroYo())
@@ -144,13 +145,7 @@ extension MapViewController: MKMapViewDelegate {
   
   func selectNextFroYo() -> Business {
     froYoCounter += 1
-    if froYoCounter > 0 {
-      backButton.enabled = true
-    }
     
-    if froYoCounter == businesses.count - 1 {
-      nextButton.enabled = false
-    }
     return businesses[froYoCounter]
   }
   
@@ -158,20 +153,44 @@ extension MapViewController: MKMapViewDelegate {
     froYoCounter -= 1
     nextButton.enabled = true
     
-    if froYoCounter <= 0 {
-      backButton.enabled = false
-    }
     return businesses[froYoCounter]
   }
   
+  func checkButtonEnabling() {
+    if froYoCounter <= 0 {
+      backButton.enabled = false
+    }
+    
+    if froYoCounter > 0 {
+      backButton.enabled = true
+    }
+    
+    if froYoCounter == businesses.count - 1 {
+      nextButton.enabled = false
+    }
+    
+  }
+  
   func updateFroYoAndDistanceLabel(business: Business) {
-    froYoSuggestionLabel.text = "\(businesses[froYoCounter].name!)"
-    selectedTitle = businesses[froYoCounter].name!
+    froYoSuggestionLabel.text = "\(business.name!)"
+    selectedTitle = business.name!
     let businessPinArray = mapView.annotations
     mapView.removeAnnotations(businessPinArray)
     mapView.addAnnotations(businessPinArray)
     centerMapOnLocation(convertHashLocationToCoordinate(business))
     getDistanceInMilesAndUpdateLabel(currentUserLocation!, point2: convertHashLocationToCoordinate(business))
+    checkButtonEnabling()
   }
   
+  func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    let selectedAnnotation = view.annotation as? FroYoPlacemark
+    
+    for business in businesses {
+      if selectedAnnotation!.subtitle! == business.address! {
+        let indexNumber = businesses.indexOf(business)
+        froYoCounter = indexNumber!
+      }
+    }
+    updateFroYoAndDistanceLabel(selectedAnnotation!.business!)
+  }
 }
