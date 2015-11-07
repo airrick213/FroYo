@@ -16,8 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="1uo-pp-VB2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XH-4w-idc">
+                                <rect key="frame" x="0.0" y="528" width="600" height="72"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="Ced-Za-AQ2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="9qd-uZ-mJ8" kind="show" identifier="showMap" id="BMk-29-4MR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4XH-4w-idc" secondAttribute="trailing" id="2iK-g4-yiB"/>
+                            <constraint firstItem="4XH-4w-idc" firstAttribute="leading" secondItem="1uo-pp-VB2" secondAttribute="leading" id="7pg-8d-URk"/>
+                            <constraint firstItem="o1y-K9-yYg" firstAttribute="top" secondItem="4XH-4w-idc" secondAttribute="bottom" id="9EX-m7-h8Y"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="MapIcon" id="aDY-gl-j0z" userLabel="Map">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -27,8 +45,50 @@
             </objects>
             <point key="canvasLocation" x="175" y="620"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="O59-sd-Qsz">
+            <objects>
+                <viewController id="9qd-uZ-mJ8" customClass="MapViewController" customModule="FroYo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fiO-V4-Zbp"/>
+                        <viewControllerLayoutGuide type="bottom" id="0fz-3k-6Xm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ul0-7z-iKM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-wU-gW6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="OPp-XE-Osc">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gdW-6C-9HK">
+                                            <connections>
+                                                <segue destination="84x-nE-Sh0" kind="custom" identifier="cancelMap" customClass="DismissSegue" id="mLD-fY-z14"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="XAh-au-N6w">
+                                            <connections>
+                                                <segue destination="84x-nE-Sh0" kind="custom" identifier="doneMap" customClass="DismissSegue" id="nGB-Ru-zbl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jT7-W3-tlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="620"/>
+        </scene>
     </scenes>
     <resources>
         <image name="MapIcon" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nGB-Ru-zbl"/>
+    </inferredMetricsTieBreakers>
 </document>

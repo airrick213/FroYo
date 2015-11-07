@@ -8,6 +8,19 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb117534075275864</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>117534075275864</string>
+    <key>FacebookDisplayName</key>
+    <string>FroYo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
