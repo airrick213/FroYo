@@ -12,8 +12,6 @@ import FBSDKLoginKit
 import FBSDKMessengerShareKit
 import MBProgressHUD
 import Foundation
-import Alamofire
-import SwiftyJSON
 import Contacts
 
 class ContactsViewController: UIViewController {
@@ -22,44 +20,53 @@ class ContactsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-////    facebook friends
-//    var friends: NSArray = []
+//    facebook friends
+    var friends: NSArray = []
     
-    //contacts
-    let contactStore = CNContactStore()
-    var contacts: [CNContact] = []
+//    //contacts
+//    let contactStore = CNContactStore()
+//    var contacts: [CNContact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        loadFriendsList()
+        loadFriendsList()
         
-        if CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts) != CNAuthorizationStatus.Authorized {
-            contactStore.requestAccessForEntityType(CNEntityType.Contacts) { (success: Bool, error: NSError?) -> Void in
-                if error != nil {
-                    AlertHelper.createCancelAlert(title: "Sorry", message: "Could not request contacts", sender: self)
-                }
-                else if success {
-                    self.updateContacts()
-                }
-            }
-        }
-        else {
-            updateContacts()
-        }
+//        if CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts) != CNAuthorizationStatus.Authorized {
+//            contactStore.requestAccessForEntityType(CNEntityType.Contacts) { (success: Bool, error: NSError?) -> Void in
+//                if error != nil {
+//                    AlertHelper.createCancelAlert(title: "Sorry", message: "Could not request contacts", sender: self)
+//                }
+//                else if success {
+//                    self.updateContacts()
+//                }
+//            }
+//        }
+//        else {
+//            updateContacts()
+//        }
     }
     
-    func updateContacts() {
-        do {
-            try contactStore.enumerateContactsWithFetchRequest(CNContactFetchRequest(keysToFetch: [CNContactThumbnailImageDataKey, CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey])) { (contact: CNContact, status: UnsafeMutablePointer<ObjCBool>) -> Void in
-                self.contacts.append(contact)
-            }
-            
-            tableView.reloadData()
-        }
-        catch {
-            AlertHelper.createCancelAlert(title: "Sorry", message: "Could not load contacts", sender: self)
-        }
+//    func updateContacts() {
+//        do {
+//            try contactStore.enumerateContactsWithFetchRequest(CNContactFetchRequest(keysToFetch: [CNContactThumbnailImageDataKey, CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey])) { (contact: CNContact, status: UnsafeMutablePointer<ObjCBool>) -> Void in
+//                self.contacts.append(contact)
+//            }
+//            
+//            tableView.reloadData()
+//        }
+//        catch {
+//            AlertHelper.createCancelAlert(title: "Sorry", message: "Could not load contacts", sender: self)
+//        }
+//    }
+    
+    func sendMessageTo(recipient: String) -> Bool {
+//        let twilioSID = "AC64661b069f2b8902b0eff0b6fd9f8106"
+//        let twilioSecret = "ffe27cbb835ab03346525716db12778e"
+//        let fromNumber = "8627666720"
+//        let message = "Yo froyo?"
+        
+        return false
     }
     
     
@@ -71,40 +78,29 @@ class ContactsViewController: UIViewController {
     //MARK: Facebook code
     
     
-//    func loadFriendsList() {
-//        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "id"], HTTPMethod: "GET")
-//        
-//        graphRequest.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
-//            if error != nil {
-//                let actionController = UIAlertController(
-//                    title: error.userInfo[FBSDKErrorLocalizedTitleKey] as? String,
-//                    message: error.userInfo[FBSDKErrorLocalizedDescriptionKey] as? String,
-//                    preferredStyle: UIAlertControllerStyle.Alert)
-//                
-//                let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action: UIAlertAction) -> Void in
-//                    actionController.dismissViewControllerAnimated(true, completion: nil)
-//                }
-//                
-//                actionController.addAction(cancelAction)
-//                
-//                self.showViewController(actionController, sender: self)
-//            }
-//            else {
-//                let resultDict = result as! NSDictionary
-//                print("Result Dict: \(resultDict)")
-//                
-//                self.friends = resultDict.objectForKey("data") as! NSArray
-//                
-//                for i in 0 ..< self.friends.count {
-//                    let valueDict = self.friends[i] as! NSDictionary
-//                    let id = valueDict.objectForKey("id") as! String
-//                    print("the id value is \(id)")
-//                }
-//                
-//                print("Found \(self.friends.count) friends")
-//            }
-//        }
-//    }
+    func loadFriendsList() {
+        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "id"], HTTPMethod: "GET")
+        
+        graphRequest.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
+            if error != nil {
+                AlertHelper.createCancelAlert(title: error.userInfo[FBSDKErrorLocalizedTitleKey] as! String, message: error.userInfo[FBSDKErrorLocalizedDescriptionKey] as! String, sender: self)
+            }
+            else {
+                let resultDict = result as! NSDictionary
+                print("Result Dict: \(resultDict)")
+                
+                self.friends = resultDict.objectForKey("data") as! NSArray
+                
+                for i in 0 ..< self.friends.count {
+                    let valueDict = self.friends[i] as! NSDictionary
+                    let id = valueDict.objectForKey("id") as! String
+                    print("the id value is \(id)")
+                }
+                
+                print("Found \(self.friends.count) friends")
+            }
+        }
+    }
     
 
     /*
@@ -122,13 +118,13 @@ class ContactsViewController: UIViewController {
 extension ContactsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return friends.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactsTableViewCell
         
-        cell.contact = contacts[indexPath.row]
+//        cell.contact = contacts[indexPath.row]
         
         return cell
     }
@@ -138,11 +134,48 @@ extension ContactsViewController: UITableViewDataSource {
 extension ContactsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactsTableViewCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ContactsTableViewCell
         
-        if !cell.selected {
-            cell.selected = true
+        if !cell.cellSelected {
+            cell.cellSelected = true
         }
+        
+        // text messaging code
+        
+//        if !cell.cellSelected {
+//            let mobileNumbers = cell.contact.phoneNumbers.filter { $0.label == CNLabelPhoneNumberMobile || $0.label == CNLabelPhoneNumberiPhone || $0.label == CNLabelPhoneNumberMain }
+//            
+//            if mobileNumbers.count > 0 {
+//                let mobileNumbersStrings = mobileNumbers.map { ($0.value as! CNPhoneNumber).stringValue }
+//                
+//                cell.cellSelected = sendMessageTo(mobileNumbersStrings[0])
+//            }
+//            else {
+//                AlertHelper.createCancelAlert(title: "Sorry", message: "No mobile numbers in this contact", sender: self)
+//            }
+//        }
     }
     
 }
+
+//extension ContactsViewController: MFMessageComposeViewControllerDelegate {
+//    
+//    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+//        switch result {
+//            case MessageComposeResultCancelled:
+//                print("Cancelled")
+//                break
+//            case MessageComposeResultFailed:
+//                AlertHelper.createCancelAlert(title: "Sorry", message: "The message failed to send", sender: self)
+//                break
+//            case MessageComposeResultSent:
+//                print("text sent!")
+//                break
+//            default:
+//                break
+//        }
+//        
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+//    
+//}
