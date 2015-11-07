@@ -12,16 +12,18 @@ import MapKit
 import MBProgressHUD
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
   var businesses: [Business]!
+//  var businessCoordinate: CLLocationCoordinate2D
   
     override func viewDidLoad() {
       super.viewDidLoad()
       locationManager.delegate = self
+      mapView.delegate = self
       locationManager.requestAlwaysAuthorization()
       locationManager.requestWhenInUseAuthorization()
       
@@ -43,7 +45,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     let locValue: CLLocationCoordinate2D = manager.location!.coordinate
     centerMapOnLocation(manager.location!)
     print("your current location is \(locValue.latitude), \(locValue.longitude)")
-    search(locValue)
+    searchAndAddAnnotations(locValue)
   
     locationManager.stopUpdatingLocation()
   }
@@ -54,46 +56,47 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     mapView.setRegion(coordinateRegion, animated: true)
   }
   
-  func requestData() {
-    let url = NSURL(string: kJSONRequestURL)!
-    let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-    NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-      
-      dispatch_async(dispatch_get_main_queue(), { () -> Void in
-        hud.hide(true)
-        NSLog("Request finished: \(response), error: \(error)")
-      })
-      
-      if self.requestSucceeded(response, error: error) {
-        print("success")
-      } else {
-        let alertController = UIAlertController(title: "Oops!", message: "Network request failed. Check your connection and try again?", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Cancel, handler: nil)
-        alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-      }
-      
-    }).resume()
-  }
-  
-  private func requestSucceeded(response: NSURLResponse!, error: NSError!) -> Bool {
-    if let httpResponse = response as? NSHTTPURLResponse {
-      return error == nil && httpResponse.statusCode >= 200 && httpResponse.statusCode < 300
-    }
-    return false
-  }
-  
-  func search(location: CLLocationCoordinate2D) {
-
+  func searchAndAddAnnotations(location: CLLocationCoordinate2D) {
     Business.searchWithLocation(location, sort: .Distance, categories: ["icecream"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
       self.businesses = businesses
       
       for business in businesses {
         print(business.name!)
         print(business.address!)
+        let locationHash = business.location!
+        let coordinateHash = locationHash["coordinate"]!
+        let businessLatitude = coordinateHash["latitude"]! as? CLLocationDegrees
+        let businessLongitude = coordinateHash["longitude"]! as? CLLocationDegrees
+        
+        let businessCoordinate = CLLocationCoordinate2DMake(businessLatitude!, businessLongitude!)
+        print(businessCoordinate)
+        
+        let froYoPlacemark = FroYoPlacemark(title: business.name!, subtitle: business.address!, coordinate: businessCoordinate)
+        self.mapView.addAnnotation(froYoPlacemark)
       }
     }
   }
   
+  
+  
+}
 
+extension MapViewController: MKMapViewDelegate {
+  func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    if let annotation = annotation as? FroYoPlacemark {
+      let identifier = "pin"
+      var view: MKPinAnnotationView
+      if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+        as? MKPinAnnotationView {
+          dequeuedView.annotation = annotation
+          view = dequeuedView
+      } else {
+        view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.canShowCallout = true
+        view.calloutOffset = CGPoint(x: -5, y: 5)
+      }
+      return view
+    }
+    return nil
+  }
 }

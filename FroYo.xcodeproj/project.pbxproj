@@ -25,6 +25,7 @@
 		2B8050A71BEDE48B001A6AC8 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */; };
 		2B8050A91BEDF299001A6AC8 /* BDBOAuth1Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8050A81BEDF299001A6AC8 /* BDBOAuth1Manager.framework */; };
 		2B8050AB1BEDF725001A6AC8 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8050AA1BEDF725001A6AC8 /* Business.swift */; };
+		2B8050AD1BEE648E001A6AC8 /* FroYoPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8050AC1BEE648E001A6AC8 /* FroYoPlacemark.swift */; };
 		6459F4CDED07D60452775C7B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F7BC82ED7B51CB1E33E0C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		2B8050A81BEDF299001A6AC8 /* BDBOAuth1Manager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BDBOAuth1Manager.framework; path = "Pods/../build/Debug-iphoneos/BDBOAuth1Manager.framework"; sourceTree = "<group>"; };
 		2B8050AA1BEDF725001A6AC8 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		2B8050AC1BEE648E001A6AC8 /* FroYoPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FroYoPlacemark.swift; sourceTree = "<group>"; };
 		339D9959D75658FF89A6E457 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,9 +139,8 @@
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				07CDBD441BEDCED1000471EC /* ContactsViewController.swift */,
 				07CDBD461BEDCED8000471EC /* MapViewController.swift */,
-				2B8050AA1BEDF725001A6AC8 /* Business.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
-				2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */,
+				2B8050AE1BEE6519001A6AC8 /* Models */,
 				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
 				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
 				07CDBD201BEDAF22000471EC /* Info.plist */,
@@ -163,6 +164,16 @@
 				07CDBD361BEDAF22000471EC /* Info.plist */,
 			);
 			path = FroYoUITests;
+			sourceTree = "<group>";
+		};
+		2B8050AE1BEE6519001A6AC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B8050AA1BEDF725001A6AC8 /* Business.swift */,
+				2B8050AC1BEE648E001A6AC8 /* FroYoPlacemark.swift */,
+				2B8050A61BEDE48B001A6AC8 /* YelpClient.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
@@ -374,6 +385,7 @@
 			files = (
 				2B8050A71BEDE48B001A6AC8 /* YelpClient.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
+				2B8050AD1BEE648E001A6AC8 /* FroYoPlacemark.swift in Sources */,
 				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
 				2B8050AB1BEDF725001A6AC8 /* Business.swift in Sources */,
 				07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */,
