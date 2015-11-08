@@ -222,9 +222,34 @@ extension MapViewController: MKMapViewDelegate {
       
       if granted {
         print("youre in")
+        let accountsArray: NSArray = accountStore.accountsWithAccountType(accountType)
         
-        
+        if accountsArray.count > 0 {
+          let twitterAccount: ACAccount = accountsArray.lastObject as! ACAccount
 
+            let message = ["status" : "Yo froyo?\n\(self.returnGoogleAddress(self.selectedBusiness!))"]
+            let requestURL = NSURL(string:
+              "https://api.twitter.com/1.1/statuses/update.json")
+          
+            let postRequest = SLRequest(forServiceType:
+              SLServiceTypeTwitter,
+              requestMethod: SLRequestMethod.POST,
+              URL: requestURL,
+              parameters: message)
+          postRequest.account = twitterAccount
+          
+          postRequest.performRequestWithHandler({
+            (responseData: NSData!,
+            urlResponse: NSHTTPURLResponse!,
+            error: NSError!) -> Void in
+            
+            if let err = error {
+              print("Error : \(err.localizedDescription)")
+            }
+            print("Twitter HTTP response \(urlResponse.statusCode)")
+          })
+          
+          }
       } else {
         print("no")
       }
