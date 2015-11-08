@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import MBProgressHUD
+import Social
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
@@ -203,4 +204,18 @@ extension MapViewController: MKMapViewDelegate {
     }
     updateFroYoAndDistanceLabel(selectedAnnotation!.business!)
   }
+  
+  
+  // MARK: Tweet
+  
+  @IBAction func tweetButtonAction(sender: AnyObject) {
+    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+      let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+      tweetSheet.setInitialText("first test tweet")
+      self.presentViewController(tweetSheet, animated: true, completion: nil)
+    } else {
+      print("error")
+    }
+  }
+  
 }
