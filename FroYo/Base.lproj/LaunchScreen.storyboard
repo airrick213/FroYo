@@ -16,8 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLW-Fs-neM">
+                                <rect key="frame" x="300" y="212" width="73.5" height="175"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="128"/>
+                                <color key="textColor" red="0.64313725489999995" green="0.90588235289999997" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5o8-hU-qeD">
+                                <rect key="frame" x="229" y="212" width="71.5" height="175"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="128"/>
+                                <color key="textColor" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.28627450980000002" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rLW-Fs-neM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Npl-f1-G78"/>
+                            <constraint firstItem="5o8-hU-qeD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sG7-zh-pFj"/>
+                            <constraint firstItem="5o8-hU-qeD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-36" id="tWZ-1s-y7H"/>
+                            <constraint firstItem="rLW-Fs-neM" firstAttribute="leading" secondItem="5o8-hU-qeD" secondAttribute="trailing" id="xfm-zG-3QY"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

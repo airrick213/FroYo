@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fen-cw-Kpt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fen-cw-Kpt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -20,30 +20,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="xkn-yh-eop">
-                                <rect key="frame" x="80" y="75" width="440" height="130"/>
+                                <rect key="frame" x="30" y="98" width="540" height="164"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="B83-fX-a1Q"/>
-                                    <constraint firstAttribute="width" secondItem="xkn-yh-eop" secondAttribute="height" multiplier="180:53" id="ZcV-yx-Wrs"/>
-                                    <constraint firstAttribute="width" secondItem="xkn-yh-eop" secondAttribute="height" multiplier="15:8" id="bbk-uZ-qeJ"/>
-                                    <constraint firstAttribute="width" constant="180" id="ip8-jM-0iM"/>
+                                    <constraint firstAttribute="width" secondItem="xkn-yh-eop" secondAttribute="height" multiplier="1038:315" id="ZcV-yx-Wrs"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="B83-fX-a1Q"/>
-                                        <exclude reference="bbk-uZ-qeJ"/>
-                                        <exclude reference="ip8-jM-0iM"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xkn-yh-eop" firstAttribute="leading" secondItem="9kS-Ol-Q4c" secondAttribute="leadingMargin" constant="60" id="Bac-89-Z4N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xkn-yh-eop" secondAttribute="trailing" constant="60" id="h0n-Tc-utr"/>
+                            <constraint firstItem="xkn-yh-eop" firstAttribute="leading" secondItem="9kS-Ol-Q4c" secondAttribute="leadingMargin" constant="10" id="Bac-89-Z4N"/>
+                            <constraint firstItem="xkn-yh-eop" firstAttribute="centerY" secondItem="9kS-Ol-Q4c" secondAttribute="centerY" constant="-120" id="O7Z-5o-ViB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xkn-yh-eop" secondAttribute="trailing" constant="10" id="h0n-Tc-utr"/>
                             <constraint firstItem="xkn-yh-eop" firstAttribute="centerX" secondItem="9kS-Ol-Q4c" secondAttribute="centerX" id="lLI-W1-u1g"/>
-                            <constraint firstItem="xkn-yh-eop" firstAttribute="centerY" secondItem="9kS-Ol-Q4c" secondAttribute="centerY" constant="-160" id="oZX-aD-LUx"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,7 +85,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5QP-gJ-toz" id="ffB-8v-YKq">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vyl-ga-hpU">
@@ -116,7 +106,7 @@
                                                     <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-Vi-ZOM">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-Vi-ZOM">
                                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="72"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.64313725490196072" green="0.90588235294117647" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
@@ -336,7 +326,7 @@
         <image name="LeftArrow" width="141" height="119"/>
         <image name="MapIcon" width="32" height="32"/>
         <image name="RightArrow" width="141" height="119"/>
-        <image name="Title" width="180" height="53"/>
+        <image name="Title" width="346" height="105"/>
         <image name="TwitterIcon" width="171" height="171"/>
     </resources>
 </document>

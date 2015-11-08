@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
       }
       
       // TODO: Change where the log in button is positioned in your view
-      logInButton.center = self.view.center
-      self.view.addSubview(logInButton)
+      logInButton.center = CGPoint(x: self.view.center.x, y: self.view.center.y + 60)
+        self.view.addSubview(logInButton)
 
     }
   
@@ -50,9 +50,14 @@ class LoginViewController: UIViewController {
     }
 
     func makeGradient() -> CAGradientLayer {
-        let color1 = UIColor(red: 1.0, green: 240.0/255.0, blue: 230.0/255.0, alpha: 1.0)
-        let color2 = UIColor(red: 1.0, green: 220.0/255.0, blue: 200.0/255.0, alpha: 1.0)
-
+        //pink
+//        let color1 = UIColor(red: 1.0, green: 240.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+//        let color2 = UIColor(red: 1.0, green: 221.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+        
+        //white and silver
+        let color1 = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let color2 = UIColor(red: 200.0/255.0, green: 210.0/255.0, blue: 215.0/255.0, alpha: 1.0)
+        
         let colors = [color1.CGColor, color2.CGColor]
         
         let locations = [NSNumber(double: 0), NSNumber(double: 1.0)]
