@@ -24,7 +24,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var backButton: UIButton!
   
-  
+  @IBOutlet weak var nextButtonLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var backButtonTrailingConstraint: NSLayoutConstraint!
   
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
@@ -97,6 +98,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBAction func nextPlaceButtonAction(sender: AnyObject) {
     updateFroYoAndDistanceLabel(selectNextFroYo())
+    nextButtonLeadingConstraint.constant = 500
+    
+    UIView.animateWithDuration(0.5) {
+      self.view.layoutIfNeeded()
+    }
   }
 
   @IBAction func previousPlaceButtonAction(sender: AnyObject) {
