@@ -33,7 +33,10 @@
 		07CDBD1F1BEDAF22000471EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */; };
 		07CDBD2A1BEDAF22000471EC /* FroYoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD291BEDAF22000471EC /* FroYoTests.swift */; };
 		07CDBD351BEDAF22000471EC /* FroYoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD341BEDAF22000471EC /* FroYoUITests.swift */; };
-		07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD441BEDCED1000471EC /* ContactsViewController.swift */; };
+		2B27541F1BEF1AA800562306 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27541B1BEF1AA800562306 /* Fabric.framework */; };
+		2B2754201BEF1AA800562306 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27541C1BEF1AA800562306 /* TwitterKit.framework */; };
+		2B2754211BEF1AA800562306 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B27541D1BEF1AA800562306 /* TwitterKitResources.bundle */; };
+		2B2754221BEF1AA800562306 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B27541E1BEF1AA800562306 /* TwitterCore.framework */; };
 		6459F4CDED07D60452775C7B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F7BC82ED7B51CB1E33E0C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -187,7 +190,6 @@
 		07CDBD301BEDAF22000471EC /* FroYoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroYoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CDBD341BEDAF22000471EC /* FroYoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroYoUITests.swift; sourceTree = "<group>"; };
 		07CDBD361BEDAF22000471EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07CDBD441BEDCED1000471EC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		07E913111BEEBCC900E1457A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		07E913121BEEBCC900E1457A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07E913141BEEBCC900E1457A /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -748,6 +750,10 @@
 		07E915AB1BEEBCE400E1457A /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
 		07E915AC1BEEBCE400E1457A /* outgoing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = outgoing.wav; sourceTree = "<group>"; };
 		294A7DB66FC61704CF673FF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2B27541B1BEF1AA800562306 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		2B27541C1BEF1AA800562306 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		2B27541D1BEF1AA800562306 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		2B27541E1BEF1AA800562306 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		339D9959D75658FF89A6E457 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -772,8 +778,11 @@
 				0751C3921BEDD47000E26512 /* FBSDKCoreKit.framework in Frameworks */,
 				0751C3931BEDD47000E26512 /* FBSDKLoginKit.framework in Frameworks */,
 				0751C3941BEDD47000E26512 /* MBProgressHUD.framework in Frameworks */,
+				2B2754221BEF1AA800562306 /* TwitterCore.framework in Frameworks */,
 				0751C3951BEDD47000E26512 /* SwiftyJSON.framework in Frameworks */,
 				6459F4CDED07D60452775C7B /* Pods.framework in Frameworks */,
+				2B2754201BEF1AA800562306 /* TwitterKit.framework in Frameworks */,
+				2B27541F1BEF1AA800562306 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,7 +871,6 @@
 				07023E1E1BEEE5110022C9F0 /* YelpClient.swift */,
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				0751C3961BEDD75E00E26512 /* LoginViewController.swift */,
-				07CDBD441BEDCED1000471EC /* ContactsViewController.swift */,
 				07023E321BEEE52B0022C9F0 /* MapViewController.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
 				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
@@ -2102,6 +2110,10 @@
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B27541B1BEF1AA800562306 /* Fabric.framework */,
+				2B27541C1BEF1AA800562306 /* TwitterKit.framework */,
+				2B27541D1BEF1AA800562306 /* TwitterKitResources.bundle */,
+				2B27541E1BEF1AA800562306 /* TwitterCore.framework */,
 				07023E9F1BEF0CD60022C9F0 /* MessageUI.framework */,
 				07023E8E1BEF044D0022C9F0 /* SystemConfiguration.framework */,
 				07023E8B1BEF043E0022C9F0 /* Security.framework */,
@@ -2159,6 +2171,7 @@
 				07CDBD0F1BEDAF22000471EC /* Resources */,
 				7F14EA693AF7781ADE0AA4BA /* Embed Pods Frameworks */,
 				E6773501EDCD053E085AD70E /* Copy Pods Resources */,
+				2B27541A1BEF1A6E00562306 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2350,6 +2363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2754211BEF1AA800562306 /* TwitterKitResources.bundle in Resources */,
 				07CDBD1F1BEDAF22000471EC /* LaunchScreen.storyboard in Resources */,
 				07CDBD1C1BEDAF22000471EC /* Assets.xcassets in Resources */,
 				07CDBD1A1BEDAF22000471EC /* Main.storyboard in Resources */,
@@ -2386,6 +2400,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B27541A1BEF1A6E00562306 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run bce64363082a1bb00e121e81d97a09d1a4df2171 f0a27154ec0e5e1adb3e3239cae5d930c5f4a8040084d693579b132f3dc01b44\n";
 			showEnvVarsInLog = 0;
 		};
 		7F14EA693AF7781ADE0AA4BA /* Embed Pods Frameworks */ = {
@@ -2439,7 +2467,6 @@
 				07023E331BEEE52B0022C9F0 /* MapViewController.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
 				0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */,
-				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
 				07023E201BEEE5110022C9F0 /* FroYoPlacemark.swift in Sources */,
 				07023E371BEEEE760022C9F0 /* CustomFBProfile.swift in Sources */,
 				07023E211BEEE5110022C9F0 /* YelpClient.swift in Sources */,
@@ -2608,6 +2635,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2674,6 +2702,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2787,6 +2816,7 @@
 				07023E661BEF01010022C9F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07CDBD0C1BEDAF22000471EC /* Build configuration list for PBXProject "FroYo" */ = {
 			isa = XCConfigurationList;

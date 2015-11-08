@@ -7,36 +7,47 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
+import TwitterKit
+
 
 class LoginViewController: UIViewController {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      print(Twitter.sharedInstance().session())
+      let logInButton = TWTRLogInButton { (session, error) in
+        if let unwrappedSession = session {
+          let alert = UIAlertController(title: "Logged In",
+            message: "User \(unwrappedSession.userName) has logged in",
+            preferredStyle: UIAlertControllerStyle.Alert
+          )
+          alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+          self.presentMapViewController()
+        } else {
+          NSLog("Login error: %@", error!.localizedDescription);
+        }
+      }
+      
+      // TODO: Change where the log in button is positioned in your view
+      logInButton.center = self.view.center
+      self.view.addSubview(logInButton)
+
     }
   
   override func viewDidAppear(animated: Bool) {
-    if FBSDKAccessToken.currentAccessToken() != nil {
-      presentContactsViewController()
-    }
-    else {
-      let loginButton: FBSDKLoginButton = FBSDKLoginButton.init()
-      
-      loginButton.center = self.view.center
-      loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-      loginButton.delegate = self
-      
-      self.view.addSubview(loginButton)
+    if Twitter.sharedInstance().session() != nil {
+      self.presentMapViewController()
     }
   }
+
   
-    func presentContactsViewController() {
+    func presentMapViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let contactsViewController = storyboard.instantiateViewControllerWithIdentifier("ContactsViewController") as! ContactsViewController
+        let mapViewController = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
         
-        self.presentViewController(contactsViewController, animated: true, completion: nil)
+        self.presentViewController(mapViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,23 +68,3 @@ class LoginViewController: UIViewController {
 
 }
 
-extension LoginViewController: FBSDKLoginButtonDelegate {
-    
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if error != nil {
-            print(error)
-        }
-        else if !result.isCancelled {
-            presentContactsViewController()
-        }
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        return
-    }
-    
-    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
-        return true
-    }
-    
-}
