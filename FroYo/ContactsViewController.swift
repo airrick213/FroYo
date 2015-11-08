@@ -11,7 +11,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import MBProgressHUD
 import Foundation
-import Contacts
+import MessageUI
+//import Contacts
 
 class ContactsViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class ContactsViewController: UIViewController {
 //    facebook friends
     var friends: [CustomFBProfile] = []
     var userEmail: String?
+    var messageSuccess = false
     
 //    //contacts
 //    let contactStore = CNContactStore()
@@ -61,13 +63,15 @@ class ContactsViewController: UIViewController {
 //        }
 //    }
     
-    func sendMessageTo(recipient: String) -> Bool {
-//        let twilioSID = "AC64661b069f2b8902b0eff0b6fd9f8106"
-//        let twilioSecret = "ffe27cbb835ab03346525716db12778e"
-//        let fromNumber = "8627666720"
-//        let message = "Yo froyo?"
+    func sendMessageTo(recipient: String) {
+        let message = "Yo froyo?"
         
-        return false
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
+        mailComposeViewController.setToRecipients([recipient])
+        mailComposeViewController.setMessageBody(message, isHTML: false)
+        
+        self.presentViewController(mailComposeViewController, animated: true, completion: nil)
     }
     
     
@@ -146,6 +150,8 @@ extension ContactsViewController: UITableViewDelegate {
         
         if !cell.cellSelected {
             cell.cellSelected = true
+            
+            sendMessageTo("KiloCalories")
         }
         
         // text messaging code
@@ -162,6 +168,33 @@ extension ContactsViewController: UITableViewDelegate {
 //                AlertHelper.createCancelAlert(title: "Sorry", message: "No mobile numbers in this contact", sender: self)
 //            }
 //        }
+    }
+    
+}
+
+extension ContactsViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch (result) {
+        case MFMailComposeResultCancelled:
+            print("Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            print("Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            print("Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            AlertHelper.createCancelAlert(title: "Sorry", message: "Message failed to send", sender: self)
+            break;
+        default:
+            break;
+        }
+        
+        self.messageSuccess = (result == MFMailComposeResultSent)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

@@ -15,6 +15,7 @@
 		07023E371BEEEE760022C9F0 /* CustomFBProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */; };
 		07023E611BEF01010022C9F0 /* GTMSessionFetcherLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07023E601BEF01010022C9F0 /* GTMSessionFetcherLib.h */; };
 		07023E631BEF01010022C9F0 /* GTMSessionFetcherLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 07023E621BEF01010022C9F0 /* GTMSessionFetcherLib.m */; };
+		07023EA01BEF0CD60022C9F0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07023E9F1BEF0CD60022C9F0 /* MessageUI.framework */; };
 		0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3881BEDD47000E26512 /* Alamofire.framework */; };
 		0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3891BEDD47000E26512 /* Bolts.framework */; };
 		0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */; };
@@ -162,6 +163,7 @@
 		07023E621BEF01010022C9F0 /* GTMSessionFetcherLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMSessionFetcherLib.m; sourceTree = "<group>"; };
 		07023E8B1BEF043E0022C9F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		07023E8E1BEF044D0022C9F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		07023E9F1BEF0CD60022C9F0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0751C3881BEDD47000E26512 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		0751C3891BEDD47000E26512 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Release-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConvenienceKit.framework; path = "Pods/../build/Release-iphoneos/ConvenienceKit.framework"; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07023EA01BEF0CD60022C9F0 /* MessageUI.framework in Frameworks */,
 				07023E341BEEE7AB0022C9F0 /* BDBOAuth1Manager.framework in Frameworks */,
 				0751C3A61BEDFA5600E26512 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */,
@@ -2099,6 +2102,7 @@
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07023E9F1BEF0CD60022C9F0 /* MessageUI.framework */,
 				07023E8E1BEF044D0022C9F0 /* SystemConfiguration.framework */,
 				07023E8B1BEF043E0022C9F0 /* Security.framework */,
 				07E915901BEEBCE400E1457A /* TwilioSDK */,
