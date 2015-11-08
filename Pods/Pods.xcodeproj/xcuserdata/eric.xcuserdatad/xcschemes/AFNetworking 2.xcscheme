@@ -14,19 +14,19 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F63170B6ED5D919FFD176545A8AA9BE"
-               BuildableName = "FBSDKMessengerShareKit.framework"
-               BlueprintName = "FBSDKMessengerShareKit"
+               BlueprintIdentifier = "4878C70B21CA37D7CB8A476BF986741B"
+               BuildableName = "AFNetworking.framework"
+               BlueprintName = "AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <AdditionalOptions>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F63170B6ED5D919FFD176545A8AA9BE"
-            BuildableName = "FBSDKMessengerShareKit.framework"
-            BlueprintName = "FBSDKMessengerShareKit"
+            BlueprintIdentifier = "4878C70B21CA37D7CB8A476BF986741B"
+            BuildableName = "AFNetworking.framework"
+            BlueprintName = "AFNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,17 +55,17 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F63170B6ED5D919FFD176545A8AA9BE"
-            BuildableName = "FBSDKMessengerShareKit.framework"
-            BlueprintName = "FBSDKMessengerShareKit"
+            BlueprintIdentifier = "4878C70B21CA37D7CB8A476BF986741B"
+            BuildableName = "AFNetworking.framework"
+            BlueprintName = "AFNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
