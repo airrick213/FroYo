@@ -13,6 +13,8 @@
 		07023E331BEEE52B0022C9F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E321BEEE52B0022C9F0 /* MapViewController.swift */; };
 		07023E341BEEE7AB0022C9F0 /* BDBOAuth1Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07023E311BEEE5110022C9F0 /* BDBOAuth1Manager.framework */; };
 		07023E371BEEEE760022C9F0 /* CustomFBProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */; };
+		07023E611BEF01010022C9F0 /* GTMSessionFetcherLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07023E601BEF01010022C9F0 /* GTMSessionFetcherLib.h */; };
+		07023E631BEF01010022C9F0 /* GTMSessionFetcherLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 07023E621BEF01010022C9F0 /* GTMSessionFetcherLib.m */; };
 		0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3881BEDD47000E26512 /* Alamofire.framework */; };
 		0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3891BEDD47000E26512 /* Bolts.framework */; };
 		0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */; };
@@ -135,6 +137,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07023E5C1BEF01010022C9F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				07023E611BEF01010022C9F0 /* GTMSessionFetcherLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		055F7BC82ED7B51CB1E33E0C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07023E1C1BEEE5110022C9F0 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
@@ -142,6 +157,11 @@
 		07023E1E1BEEE5110022C9F0 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		07023E321BEEE52B0022C9F0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFBProfile.swift; sourceTree = "<group>"; };
+		07023E5E1BEF01010022C9F0 /* libGTMSessionFetcherLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGTMSessionFetcherLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07023E601BEF01010022C9F0 /* GTMSessionFetcherLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMSessionFetcherLib.h; sourceTree = "<group>"; };
+		07023E621BEF01010022C9F0 /* GTMSessionFetcherLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMSessionFetcherLib.m; sourceTree = "<group>"; };
+		07023E8B1BEF043E0022C9F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		07023E8E1BEF044D0022C9F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0751C3881BEDD47000E26512 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		0751C3891BEDD47000E26512 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Release-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConvenienceKit.framework; path = "Pods/../build/Release-iphoneos/ConvenienceKit.framework"; sourceTree = "<group>"; };
@@ -730,6 +750,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		07023E5B1BEF01010022C9F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07CDBD0E1BEDAF22000471EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -772,6 +799,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		07023E5F1BEF01010022C9F0 /* GTMSessionFetcherLib */ = {
+			isa = PBXGroup;
+			children = (
+				07023E601BEF01010022C9F0 /* GTMSessionFetcherLib.h */,
+				07023E621BEF01010022C9F0 /* GTMSessionFetcherLib.m */,
+			);
+			path = GTMSessionFetcherLib;
+			sourceTree = "<group>";
+		};
 		0751C39F1BEDF78900E26512 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +830,7 @@
 				07CDBD131BEDAF22000471EC /* FroYo */,
 				07CDBD281BEDAF22000471EC /* FroYoTests */,
 				07CDBD331BEDAF22000471EC /* FroYoUITests */,
+				07023E5F1BEF01010022C9F0 /* GTMSessionFetcherLib */,
 				07CDBD121BEDAF22000471EC /* Products */,
 				AACE1A914526325FD060F7F3 /* Pods */,
 				44F03FF4BB8CAC159F8DCF44 /* Frameworks */,
@@ -806,6 +843,7 @@
 				07CDBD111BEDAF22000471EC /* FroYo.app */,
 				07CDBD251BEDAF22000471EC /* FroYoTests.xctest */,
 				07CDBD301BEDAF22000471EC /* FroYoUITests.xctest */,
+				07023E5E1BEF01010022C9F0 /* libGTMSessionFetcherLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2061,6 +2099,8 @@
 		44F03FF4BB8CAC159F8DCF44 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07023E8E1BEF044D0022C9F0 /* SystemConfiguration.framework */,
+				07023E8B1BEF043E0022C9F0 /* Security.framework */,
 				07E915901BEEBCE400E1457A /* TwilioSDK */,
 				07E9130F1BEEBCC900E1457A /* Pods */,
 				0751C3A51BEDFA5600E26512 /* FBSDKMessengerShareKit.framework */,
@@ -2088,6 +2128,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		07023E5D1BEF01010022C9F0 /* GTMSessionFetcherLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07023E641BEF01010022C9F0 /* Build configuration list for PBXNativeTarget "GTMSessionFetcherLib" */;
+			buildPhases = (
+				07023E5A1BEF01010022C9F0 /* Sources */,
+				07023E5B1BEF01010022C9F0 /* Frameworks */,
+				07023E5C1BEF01010022C9F0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GTMSessionFetcherLib;
+			productName = GTMSessionFetcherLib;
+			productReference = 07023E5E1BEF01010022C9F0 /* libGTMSessionFetcherLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		07CDBD101BEDAF22000471EC /* FroYo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07CDBD391BEDAF22000471EC /* Build configuration list for PBXNativeTarget "FroYo" */;
@@ -2154,6 +2211,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = EKEY;
 				TargetAttributes = {
+					07023E5D1BEF01010022C9F0 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					07CDBD101BEDAF22000471EC = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -2189,6 +2249,7 @@
 				07CDBD101BEDAF22000471EC /* FroYo */,
 				07CDBD241BEDAF22000471EC /* FroYoTests */,
 				07CDBD2F1BEDAF22000471EC /* FroYoUITests */,
+				07023E5D1BEF01010022C9F0 /* GTMSessionFetcherLib */,
 			);
 		};
 /* End PBXProject section */
@@ -2356,6 +2417,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		07023E5A1BEF01010022C9F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07023E631BEF01010022C9F0 /* GTMSessionFetcherLib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07CDBD0D1BEDAF22000471EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2424,6 +2493,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		07023E651BEF01010022C9F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		07023E661BEF01010022C9F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		07CDBD371BEDAF22000471EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2512,10 +2599,15 @@
 			baseConfigurationReference = 294A7DB66FC61704CF673FF4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2523,8 +2615,48 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs/TwilioClient-1.2.5.b76-eb6f40d/Libraries",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-read_only_relocs",
+					suppress,
+					"-l\"TwilioClient\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BDBOAuth1Manager\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"ConvenienceKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKMessengerShareKit\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -2533,10 +2665,15 @@
 			baseConfigurationReference = 339D9959D75658FF89A6E457 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
 				);
 				INFOPLIST_FILE = FroYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2544,8 +2681,47 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libs/TwilioClient-1.2.5.b76-eb6f40d/Libraries",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-read_only_relocs",
+					suppress,
+					"-l\"TwilioClient\"",
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"BDBOAuth1Manager\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"ConvenienceKit\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKMessengerShareKit\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ekey.FroYo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -2600,6 +2776,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		07023E641BEF01010022C9F0 /* Build configuration list for PBXNativeTarget "GTMSessionFetcherLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07023E651BEF01010022C9F0 /* Debug */,
+				07023E661BEF01010022C9F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		07CDBD0C1BEDAF22000471EC /* Build configuration list for PBXProject "FroYo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -11,12 +11,12 @@ import UIKit
 
 class CustomFBProfile {
     
-    var userID: String
+    var email: String?
     var name: String
     var profilePicture: UIImage?
     
-    init(userID: String, name: String, pictureURL: String?) {
-        self.userID = userID
+    init(email: String?, name: String, pictureURL: String?) {
+        self.email = email
         self.name = name
         
         if pictureURL != "" && pictureURL != nil {

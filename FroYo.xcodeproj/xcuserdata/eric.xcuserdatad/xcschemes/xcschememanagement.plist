@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GTMSessionFetcherLib.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>07023E5D1BEF01010022C9F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>07CDBD101BEDAF22000471EC</key>
 		<dict>
 			<key>primary</key>

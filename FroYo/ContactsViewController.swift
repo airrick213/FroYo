@@ -9,7 +9,6 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
-import FBSDKMessengerShareKit
 import MBProgressHUD
 import Foundation
 import Contacts
@@ -22,6 +21,7 @@ class ContactsViewController: UIViewController {
     
 //    facebook friends
     var friends: [CustomFBProfile] = []
+    var userEmail: String?
     
 //    //contacts
 //    let contactStore = CNContactStore()
@@ -31,6 +31,7 @@ class ContactsViewController: UIViewController {
         super.viewDidLoad()
         
         loadFriendsList()
+        userEmail = "erickim213@gmail.com"
         
 //        if CNContactStore.authorizationStatusForEntityType(CNEntityType.Contacts) != CNAuthorizationStatus.Authorized {
 //            contactStore.requestAccessForEntityType(CNEntityType.Contacts) { (success: Bool, error: NSError?) -> Void in
@@ -77,9 +78,8 @@ class ContactsViewController: UIViewController {
     
     //MARK: Facebook code
     
-    
     func loadFriendsList() {
-        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "id, name, picture"], HTTPMethod: "GET")
+        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "email, name, picture"], HTTPMethod: "GET")
         
         graphRequest.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
             if error != nil {
@@ -93,12 +93,12 @@ class ContactsViewController: UIViewController {
                 
                 for i in 0 ..< data.count {
                     let valueDict = data[i] as! NSDictionary
-                    let id = valueDict.objectForKey("id") as! String
+                    let email: String? = valueDict.objectForKey("email") as? String
                     let name = valueDict.objectForKey("name") as! String
                     let pictureData = (valueDict.objectForKey("picture") as! NSDictionary).objectForKey("data") as! NSDictionary
-                    let pictureURL = pictureData.objectForKey("url") as! String
+                    let pictureURL: String? = pictureData.objectForKey("url") as? String
                     
-                    self.friends.append(CustomFBProfile(userID: id, name: name, pictureURL: pictureURL))
+                    self.friends.append(CustomFBProfile(email: email, name: name, pictureURL: pictureURL))
                 }
                 
                 self.tableView.reloadData()
