@@ -47,7 +47,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="84x-nE-Sh0" kind="show" identifier="showContacts" id="wB1-yJ-h5N"/>
+                        <segue destination="9qd-uZ-mJ8" kind="show" id="riv-zI-lqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyX-c1-31R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,9 +77,6 @@
                                 <state key="normal" title="Froyo Store Info">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="9qd-uZ-mJ8" kind="show" identifier="showMap" id="BMk-29-4MR"/>
-                                </connections>
                             </button>
                             <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" text="" placeholder="Search a name" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-JH-fPT">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
@@ -192,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tFq-CL-8wx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="620"/>
+            <point key="canvasLocation" x="192" y="-164"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="O59-sd-Qsz">
@@ -214,16 +211,8 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="OPp-XE-Osc">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gdW-6C-9HK">
-                                            <connections>
-                                                <segue destination="84x-nE-Sh0" kind="custom" identifier="cancelMap" customClass="DismissSegue" id="mLD-fY-z14"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="XAh-au-N6w">
-                                            <connections>
-                                                <segue destination="84x-nE-Sh0" kind="custom" identifier="doneMap" customClass="DismissSegue" id="nGB-Ru-zbl"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gdW-6C-9HK"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="XAh-au-N6w"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -320,14 +309,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jT7-W3-tlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="620"/>
+            <point key="canvasLocation" x="192" y="620"/>
         </scene>
     </scenes>
     <resources>
         <image name="MapIcon" width="32" height="32"/>
         <image name="Title" width="180" height="53"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="wB1-yJ-h5N"/>
-    </inferredMetricsTieBreakers>
 </document>
