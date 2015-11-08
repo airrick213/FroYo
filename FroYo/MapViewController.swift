@@ -29,7 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
-  var selectedTitle: String?
+  var selectedSubtitle: String?
   var businesses: [Business]!
   var currentUserLocation: CLLocationCoordinate2D?
   var froYoCounter = 0
@@ -98,15 +98,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBAction func nextPlaceButtonAction(sender: AnyObject) {
     updateFroYoAndDistanceLabel(selectNextFroYo())
-    nextButtonLeadingConstraint.constant = 500
     
-    UIView.animateWithDuration(0.5) {
-      self.view.layoutIfNeeded()
-    }
+    nextButtonLeadingConstraint.constant = 500
+    UIView.animateWithDuration(0.2, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+      self.nextButtonLeadingConstraint.constant = 20
+    })
+    
+
   }
 
   @IBAction func previousPlaceButtonAction(sender: AnyObject) {
     updateFroYoAndDistanceLabel(selectBeforeFroYo())
+    
+    backButtonTrailingConstraint.constant = 500
+    UIView.animateWithDuration(0.2, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+      self.backButtonTrailingConstraint.constant = 20
+    })
   }
 
   
@@ -147,7 +154,7 @@ extension MapViewController: MKMapViewDelegate {
         view.calloutOffset = CGPoint(x: -5, y: 5)
       }
       
-      if annotation.title == selectedTitle {
+      if annotation.subtitle == selectedSubtitle {
         view.pinTintColor = UIColor.greenColor()
       } else {
         view.pinTintColor = UIColor.redColor()
@@ -193,7 +200,7 @@ extension MapViewController: MKMapViewDelegate {
   
   func updateFroYoAndDistanceLabel(business: Business) {
     froYoSuggestionLabel.text = "\(business.name!)"
-    selectedTitle = business.name!
+    selectedSubtitle = business.address!
     let businessPinArray = mapView.annotations
     mapView.removeAnnotations(businessPinArray)
     mapView.addAnnotations(businessPinArray)
