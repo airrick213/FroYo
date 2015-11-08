@@ -8,7 +8,8 @@
 
 import UIKit
 import TwitterKit
-
+import Foundation
+import QuartzCore
 
 class LoginViewController: UIViewController {
 
@@ -41,7 +42,27 @@ class LoginViewController: UIViewController {
       self.presentMapViewController()
     }
   }
+    
+    override func viewWillAppear(animated: Bool) {
+        let backgroundGradientLayer = makeGradient()
+        backgroundGradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(backgroundGradientLayer, atIndex: 0)
+    }
 
+    func makeGradient() -> CAGradientLayer {
+        let color1 = UIColor(red: 1.0, green: 240.0/255.0, blue: 230.0/255.0, alpha: 1.0)
+        let color2 = UIColor(red: 1.0, green: 220.0/255.0, blue: 200.0/255.0, alpha: 1.0)
+
+        let colors = [color1.CGColor, color2.CGColor]
+        
+        let locations = [NSNumber(double: 0), NSNumber(double: 1.0)]
+        
+        let headerLayer = CAGradientLayer()
+        headerLayer.colors = colors as [AnyObject]
+        headerLayer.locations = locations
+        
+        return headerLayer
+    }
   
     func presentMapViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
