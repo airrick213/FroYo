@@ -11,6 +11,8 @@ import CoreLocation
 import MapKit
 import MBProgressHUD
 import Social
+import Twitter
+import Accounts
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
@@ -31,6 +33,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   var currentUserLocation: CLLocationCoordinate2D?
   var froYoCounter = 0
   var refreshCounter = 0
+  var selectedBusiness: Business?
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -112,13 +115,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     distanceLabel.text = "\(distanceInMilesRounded) Miles away"
   }
   
-  func printGoogleAddress(business: Business) {
+  func returnGoogleAddress(business: Business) -> String {
     let address = "\(business.address!) \(business.city!) \(business.stateCode!)"
     let addressNoCommas = address.stringByReplacingOccurrencesOfString(",", withString: "")
     let urlAddress = addressNoCommas.stringByReplacingOccurrencesOfString(" ", withString: "+")
     
     print(business.city!)
-    print("https://www.google.com/maps/place/\(urlAddress)")
+    return("https://www.google.com/maps/place/\(urlAddress)")
   }
 }
 
@@ -150,19 +153,20 @@ extension MapViewController: MKMapViewDelegate {
   
   func initialFroYo() -> Business {
     backButton.enabled = false
+    selectedBusiness = businesses[froYoCounter]
     return businesses[froYoCounter]
   }
   
   func selectNextFroYo() -> Business {
     froYoCounter += 1
-    
+    selectedBusiness = businesses[froYoCounter]
     return businesses[froYoCounter]
   }
   
   func selectBeforeFroYo() -> Business {
     froYoCounter -= 1
     nextButton.enabled = true
-    
+    selectedBusiness = businesses[froYoCounter]
     return businesses[froYoCounter]
   }
   
@@ -190,7 +194,7 @@ extension MapViewController: MKMapViewDelegate {
     centerMapOnLocation(convertHashLocationToCoordinate(business))
     getDistanceInMilesAndUpdateLabel(currentUserLocation!, point2: convertHashLocationToCoordinate(business))
     checkButtonEnabling()
-    printGoogleAddress(business)
+    print(returnGoogleAddress(business))
   }
   
   func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
@@ -202,6 +206,7 @@ extension MapViewController: MKMapViewDelegate {
         froYoCounter = indexNumber!
       }
     }
+    selectedBusiness = businesses[froYoCounter]
     updateFroYoAndDistanceLabel(selectedAnnotation!.business!)
   }
   
@@ -209,13 +214,31 @@ extension MapViewController: MKMapViewDelegate {
   // MARK: Tweet
   
   @IBAction func tweetButtonAction(sender: AnyObject) {
-    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-      let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-      tweetSheet.setInitialText("first test tweet")
-      self.presentViewController(tweetSheet, animated: true, completion: nil)
-    } else {
-      print("error")
+    let accountStore = ACAccountStore()
+    let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+    
+    accountStore.requestAccessToAccountsWithType(accountType, options: nil) {
+      granted, error in
+      
+      if granted {
+        print("youre in")
+        
+        
+
+      } else {
+        print("no")
+      }
+    
     }
+    
+    
+//    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+//      let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+//      tweetSheet.setInitialText("Yo froyo?\n\(returnGoogleAddress(selectedBusiness!))")
+//      self.presentViewController(tweetSheet, animated: true, completion: nil)
+//    } else {
+//      print("error")
+//    }
   }
   
 }
