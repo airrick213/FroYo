@@ -9,11 +9,10 @@
 import UIKit
 import CoreLocation
 import MapKit
-import MBProgressHUD
 import Social
 import Twitter
 import Accounts
-
+import MBProgressHUD
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -26,6 +25,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBOutlet weak var nextButtonLeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var backButtonTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var blueRectangleView: UIView!
+    @IBOutlet weak var blueRectangleViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var blueRectangleViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var blueRectangleViewBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var sentLabel: UILabel!
+    @IBOutlet weak var sentLabelBottomConstraint: NSLayoutConstraint!
+    
   
   let locationManager = CLLocationManager()
   let kJSONRequestURL = "https://api.yelp.com/v2/"
@@ -46,7 +54,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
       if CLLocationManager.locationServicesEnabled() {
         locationManager.startUpdatingLocation()
       }
-      
+        
+        blueRectangleView.layer.cornerRadius = blueRectangleView.frame.width / 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,6 +145,45 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     print(business.city!)
     return("https://www.google.com/maps/place/\(urlAddress)")
   }
+    
+    func animateSentMessage() {
+        print("animation started")
+        
+        blueRectangleView.hidden = false
+        
+        blueRectangleViewBottomConstraint.constant = 0
+        blueRectangleView.layer.cornerRadius = 0
+        blueRectangleViewWidth.constant = self.view.frame.width
+        blueRectangleViewHeight.constant = self.view.frame.height
+        UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+            
+            self.sentLabelBottomConstraint.constant = (self.view.frame.height / 2) - 77 //the label is 77px tall
+            UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+               
+                self.sentLabelBottomConstraint.constant = (self.view.frame.height / 2)
+                UIView.animateWithDuration(0.75, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+
+                    self.sentLabelBottomConstraint.constant = self.view.frame.height
+                    UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+
+                        self.blueRectangleViewBottomConstraint.constant = 20
+                        
+                        self.blueRectangleView.layer.cornerRadius = 80 / 2
+                        self.blueRectangleViewWidth.constant = 80
+                        self.blueRectangleViewHeight.constant = 80
+                        UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+
+                            self.blueRectangleView.hidden = true
+                            self.sentLabelBottomConstraint.constant = -77
+                        })
+                    })
+                })
+            })
+        })
+        
+        print("done loading animation")
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -227,6 +275,8 @@ extension MapViewController: MKMapViewDelegate {
   // MARK: Tweet
   
   @IBAction func tweetButtonAction(sender: AnyObject) {
+//    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+    
     let accountStore = ACAccountStore()
     let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
     
@@ -238,7 +288,7 @@ extension MapViewController: MKMapViewDelegate {
         let accountsArray: NSArray = accountStore.accountsWithAccountType(accountType)
         
         if accountsArray.count > 0 {
-          let twitterAccount: ACAccount = accountsArray.lastObject as! ACAccount
+            let twitterAccount: ACAccount = accountsArray.lastObject as! ACAccount
 
             let message = ["status" : "Yo froyo at \(self.selectedBusiness!.name!)?\n\(self.returnGoogleAddress(self.selectedBusiness!))"]
             let requestURL = NSURL(string:
@@ -256,17 +306,22 @@ extension MapViewController: MKMapViewDelegate {
             urlResponse: NSHTTPURLResponse!,
             error: NSError!) -> Void in
             
+//            MBProgressHUD.hideHUDForView(self.view, animated: true)
             if let err = error {
               print("Error : \(err.localizedDescription)")
             }
+            else {
+//                self.animateSentMessage()
+            }
+            
             print("Twitter HTTP response \(urlResponse.statusCode)")
           })
           
           }
       } else {
         print("no")
+//        MBProgressHUD.hideHUDForView(self.view, animated: true)
       }
-    
     }
     
     
