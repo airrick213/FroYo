@@ -113,7 +113,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
       self.nextButtonLeadingConstraint.constant = 20
     })
     
-
   }
 
   @IBAction func previousPlaceButtonAction(sender: AnyObject) {
@@ -150,29 +149,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         print("animation started")
         
         blueRectangleView.hidden = false
-        
         blueRectangleViewBottomConstraint.constant = 0
         blueRectangleView.layer.cornerRadius = 0
         blueRectangleViewWidth.constant = self.view.frame.width
         blueRectangleViewHeight.constant = self.view.frame.height
-        UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+        UIView.animateWithDuration(0.20, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
             
-            self.sentLabelBottomConstraint.constant = (self.view.frame.height / 2) - 77 //the label is 77px tall
-            UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
-               
+            self.sentLabelBottomConstraint.constant = (self.view.frame.height / 2) - self.sentLabel.frame.height
+            UIView.animateWithDuration(0.20, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+
                 self.sentLabelBottomConstraint.constant = (self.view.frame.height / 2)
-                UIView.animateWithDuration(0.75, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+                UIView.animateWithDuration(0.60, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
 
                     self.sentLabelBottomConstraint.constant = self.view.frame.height
-                    UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+                    UIView.animateWithDuration(0.20, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
 
                         self.blueRectangleViewBottomConstraint.constant = 20
                         
                         self.blueRectangleView.layer.cornerRadius = 80 / 2
                         self.blueRectangleViewWidth.constant = 80
                         self.blueRectangleViewHeight.constant = 80
-                        UIView.animateWithDuration(0.25, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
-
+                        UIView.animateWithDuration(0.20, animations: {self.view.layoutIfNeeded()}, completion: { (finished: Bool) in
+                            
                             self.blueRectangleView.hidden = true
                             self.sentLabelBottomConstraint.constant = -77
                         })
@@ -275,7 +273,7 @@ extension MapViewController: MKMapViewDelegate {
   // MARK: Tweet
   
   @IBAction func tweetButtonAction(sender: AnyObject) {
-//    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+    self.animateSentMessage()
     
     let accountStore = ACAccountStore()
     let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
@@ -285,6 +283,7 @@ extension MapViewController: MKMapViewDelegate {
       
       if granted {
         print("youre in")
+        
         let accountsArray: NSArray = accountStore.accountsWithAccountType(accountType)
         
         if accountsArray.count > 0 {
@@ -306,12 +305,8 @@ extension MapViewController: MKMapViewDelegate {
             urlResponse: NSHTTPURLResponse!,
             error: NSError!) -> Void in
             
-//            MBProgressHUD.hideHUDForView(self.view, animated: true)
             if let err = error {
               print("Error : \(err.localizedDescription)")
-            }
-            else {
-//                self.animateSentMessage()
             }
             
             print("Twitter HTTP response \(urlResponse.statusCode)")
@@ -320,7 +315,6 @@ extension MapViewController: MKMapViewDelegate {
           }
       } else {
         print("no")
-//        MBProgressHUD.hideHUDForView(self.view, animated: true)
       }
     }
     
