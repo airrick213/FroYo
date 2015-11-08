@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07023E1F1BEEE5110022C9F0 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E1C1BEEE5110022C9F0 /* Business.swift */; };
+		07023E201BEEE5110022C9F0 /* FroYoPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E1D1BEEE5110022C9F0 /* FroYoPlacemark.swift */; };
+		07023E211BEEE5110022C9F0 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E1E1BEEE5110022C9F0 /* YelpClient.swift */; };
+		07023E331BEEE52B0022C9F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E321BEEE52B0022C9F0 /* MapViewController.swift */; };
+		07023E341BEEE7AB0022C9F0 /* BDBOAuth1Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07023E311BEEE5110022C9F0 /* BDBOAuth1Manager.framework */; };
 		0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3881BEDD47000E26512 /* Alamofire.framework */; };
 		0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3891BEDD47000E26512 /* Bolts.framework */; };
 		0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */; };
@@ -25,11 +30,24 @@
 		07CDBD2A1BEDAF22000471EC /* FroYoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD291BEDAF22000471EC /* FroYoTests.swift */; };
 		07CDBD351BEDAF22000471EC /* FroYoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD341BEDAF22000471EC /* FroYoUITests.swift */; };
 		07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD441BEDCED1000471EC /* ContactsViewController.swift */; };
-		07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CDBD461BEDCED8000471EC /* MapViewController.swift */; };
 		6459F4CDED07D60452775C7B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055F7BC82ED7B51CB1E33E0C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		07023E2E1BEEE5110022C9F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07E915091BEEBCC900E1457A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D7431C6235358894F345FE17B51565E;
+			remoteInfo = AFNetworking;
+		};
+		07023E301BEEE5110022C9F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07E915091BEEBCC900E1457A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E521A82663090AC1F7A0E4AAF215232E;
+			remoteInfo = BDBOAuth1Manager;
+		};
 		07CDBD261BEDAF22000471EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07CDBD091BEDAF22000471EC /* Project object */;
@@ -118,6 +136,10 @@
 
 /* Begin PBXFileReference section */
 		055F7BC82ED7B51CB1E33E0C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07023E1C1BEEE5110022C9F0 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		07023E1D1BEEE5110022C9F0 /* FroYoPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FroYoPlacemark.swift; sourceTree = "<group>"; };
+		07023E1E1BEEE5110022C9F0 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		07023E321BEEE52B0022C9F0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0751C3881BEDD47000E26512 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		0751C3891BEDD47000E26512 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Release-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConvenienceKit.framework; path = "Pods/../build/Release-iphoneos/ConvenienceKit.framework"; sourceTree = "<group>"; };
@@ -142,7 +164,6 @@
 		07CDBD341BEDAF22000471EC /* FroYoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroYoUITests.swift; sourceTree = "<group>"; };
 		07CDBD361BEDAF22000471EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07CDBD441BEDCED1000471EC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		07CDBD461BEDCED8000471EC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		07E913111BEEBCC900E1457A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		07E913121BEEBCC900E1457A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		07E913141BEEBCC900E1457A /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
@@ -711,6 +732,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07023E341BEEE7AB0022C9F0 /* BDBOAuth1Manager.framework in Frameworks */,
 				0751C3A61BEDFA5600E26512 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */,
 				0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */,
@@ -783,10 +805,13 @@
 			children = (
 				0751C3A71BEE7D3D00E26512 /* Helpers */,
 				0751C39F1BEDF78900E26512 /* Views */,
+				07023E1C1BEEE5110022C9F0 /* Business.swift */,
+				07023E1D1BEEE5110022C9F0 /* FroYoPlacemark.swift */,
+				07023E1E1BEEE5110022C9F0 /* YelpClient.swift */,
 				07CDBD141BEDAF22000471EC /* AppDelegate.swift */,
 				0751C3961BEDD75E00E26512 /* LoginViewController.swift */,
 				07CDBD441BEDCED1000471EC /* ContactsViewController.swift */,
-				07CDBD461BEDCED8000471EC /* MapViewController.swift */,
+				07023E321BEEE52B0022C9F0 /* MapViewController.swift */,
 				07CDBD181BEDAF22000471EC /* Main.storyboard */,
 				07CDBD1D1BEDAF22000471EC /* LaunchScreen.storyboard */,
 				07CDBD1B1BEDAF22000471EC /* Assets.xcassets */,
@@ -1738,7 +1763,9 @@
 		07E9150A1BEEBCC900E1457A /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				07023E2F1BEEE5110022C9F0 /* AFNetworking.framework */,
 				07E9157D1BEEBCC900E1457A /* Alamofire.framework */,
+				07023E311BEEE5110022C9F0 /* BDBOAuth1Manager.framework */,
 				07E9157F1BEEBCC900E1457A /* Bolts.framework */,
 				07E915811BEEBCC900E1457A /* ConvenienceKit.framework */,
 				07E915831BEEBCC900E1457A /* ConvenienceKit.bundle */,
@@ -2156,6 +2183,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		07023E2F1BEEE5110022C9F0 /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 07023E2E1BEEE5110022C9F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07023E311BEEE5110022C9F0 /* BDBOAuth1Manager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BDBOAuth1Manager.framework;
+			remoteRef = 07023E301BEEE5110022C9F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		07E9157D1BEEBCC900E1457A /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -2309,11 +2350,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0751C3A91BEE7D4B00E26512 /* AlertHelper.swift in Sources */,
+				07023E1F1BEEE5110022C9F0 /* Business.swift in Sources */,
 				0751C3971BEDD75E00E26512 /* LoginViewController.swift in Sources */,
+				07023E331BEEE52B0022C9F0 /* MapViewController.swift in Sources */,
 				07CDBD151BEDAF22000471EC /* AppDelegate.swift in Sources */,
 				0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */,
 				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
-				07CDBD471BEDCED8000471EC /* MapViewController.swift in Sources */,
+				07023E201BEEE5110022C9F0 /* FroYoPlacemark.swift in Sources */,
+				07023E211BEEE5110022C9F0 /* YelpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
