@@ -227,7 +227,7 @@ extension MapViewController: MKMapViewDelegate {
         if accountsArray.count > 0 {
           let twitterAccount: ACAccount = accountsArray.lastObject as! ACAccount
 
-            let message = ["status" : "Yo froyo?\n\(self.returnGoogleAddress(self.selectedBusiness!))"]
+            let message = ["status" : "Yo froyo at \(self.selectedBusiness!.name!)?\n\(self.returnGoogleAddress(self.selectedBusiness!))"]
             let requestURL = NSURL(string:
               "https://api.twitter.com/1.1/statuses/update.json")
           
