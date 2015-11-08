@@ -206,8 +206,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-wU-gW6">
-                                <rect key="frame" x="0.0" y="10" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hQD-xc-QVM"/>
+                                </constraints>
                                 <items>
                                     <navigationItem id="OPp-XE-Osc">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gdW-6C-9HK">
@@ -224,7 +227,7 @@
                                 </items>
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IsE-bj-gI9">
-                                <rect key="frame" x="0.0" y="54" width="600" height="486"/>
+                                <rect key="frame" x="0.0" y="60" width="600" height="480"/>
                                 <animations/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pz7-7Q-bM6">
@@ -294,7 +297,7 @@
                             <constraint firstItem="pz7-7Q-bM6" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leading" id="cIA-dK-ZZr"/>
                             <constraint firstAttribute="trailing" secondItem="DRA-wU-gW6" secondAttribute="trailing" id="cbn-sU-rwb"/>
                             <constraint firstItem="cMq-OX-mz2" firstAttribute="leading" secondItem="99i-Sm-n1A" secondAttribute="trailing" id="dLg-LJ-Ngx"/>
-                            <constraint firstItem="DRA-wU-gW6" firstAttribute="top" secondItem="ul0-7z-iKM" secondAttribute="top" constant="10" id="fXK-Ge-GVZ"/>
+                            <constraint firstItem="DRA-wU-gW6" firstAttribute="top" secondItem="ul0-7z-iKM" secondAttribute="top" id="fXK-Ge-GVZ"/>
                             <constraint firstItem="IsE-bj-gI9" firstAttribute="leading" secondItem="ul0-7z-iKM" secondAttribute="leading" id="ixo-gC-gtZ"/>
                             <constraint firstItem="cMq-OX-mz2" firstAttribute="leading" secondItem="o1g-ia-EEC" secondAttribute="trailing" id="j8w-fK-zlf"/>
                             <constraint firstItem="0fz-3k-6Xm" firstAttribute="top" secondItem="pz7-7Q-bM6" secondAttribute="bottom" id="oGK-Y9-3nY"/>
