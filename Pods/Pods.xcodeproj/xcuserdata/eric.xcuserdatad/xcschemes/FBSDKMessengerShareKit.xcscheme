@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '956937D210A76AAFC50918CE'
+               BlueprintIdentifier = '26823907039BF67DFE6C8857'
                BlueprintName = 'FBSDKMessengerShareKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FBSDKMessengerShareKit.framework'>
