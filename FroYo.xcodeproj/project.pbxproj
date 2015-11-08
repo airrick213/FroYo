@@ -12,6 +12,7 @@
 		07023E211BEEE5110022C9F0 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E1E1BEEE5110022C9F0 /* YelpClient.swift */; };
 		07023E331BEEE52B0022C9F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E321BEEE52B0022C9F0 /* MapViewController.swift */; };
 		07023E341BEEE7AB0022C9F0 /* BDBOAuth1Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07023E311BEEE5110022C9F0 /* BDBOAuth1Manager.framework */; };
+		07023E371BEEEE760022C9F0 /* CustomFBProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */; };
 		0751C38F1BEDD47000E26512 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3881BEDD47000E26512 /* Alamofire.framework */; };
 		0751C3901BEDD47000E26512 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C3891BEDD47000E26512 /* Bolts.framework */; };
 		0751C3911BEDD47000E26512 /* ConvenienceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */; };
@@ -140,6 +141,7 @@
 		07023E1D1BEEE5110022C9F0 /* FroYoPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FroYoPlacemark.swift; sourceTree = "<group>"; };
 		07023E1E1BEEE5110022C9F0 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		07023E321BEEE52B0022C9F0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFBProfile.swift; sourceTree = "<group>"; };
 		0751C3881BEDD47000E26512 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		0751C3891BEDD47000E26512 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Release-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		0751C38A1BEDD47000E26512 /* ConvenienceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ConvenienceKit.framework; path = "Pods/../build/Release-iphoneos/ConvenienceKit.framework"; sourceTree = "<group>"; };
@@ -762,6 +764,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07023E351BEEEE610022C9F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				07023E361BEEEE760022C9F0 /* CustomFBProfile.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		0751C39F1BEDF78900E26512 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +813,7 @@
 		07CDBD131BEDAF22000471EC /* FroYo */ = {
 			isa = PBXGroup;
 			children = (
+				07023E351BEEEE610022C9F0 /* Classes */,
 				0751C3A71BEE7D3D00E26512 /* Helpers */,
 				0751C39F1BEDF78900E26512 /* Views */,
 				07023E1C1BEEE5110022C9F0 /* Business.swift */,
@@ -2357,6 +2368,7 @@
 				0751C3A11BEDF7A600E26512 /* ContactsTableViewCell.swift in Sources */,
 				07CDBD451BEDCED1000471EC /* ContactsViewController.swift in Sources */,
 				07023E201BEEE5110022C9F0 /* FroYoPlacemark.swift in Sources */,
+				07023E371BEEEE760022C9F0 /* CustomFBProfile.swift in Sources */,
 				07023E211BEEE5110022C9F0 /* YelpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,16 +17,16 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var greenViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet var greenViewWidth: [NSLayoutConstraint]!
     
-    var contact: CNContact! {
+    var profile: CustomFBProfile! {
         didSet {
-            if let imageData = contact.thumbnailImageData {
-                profileImageView.image = UIImage(data: imageData)
+            if let profilePicture = profile.profilePicture {
+                profileImageView.image = profilePicture
             }
             else {
                 profileImageView.image = UIImage(named: "ContactIcon")
             }
             
-            nameLabel.text = contact.givenName + " " + contact.familyName
+            nameLabel.text = profile.name
         }
     }
     

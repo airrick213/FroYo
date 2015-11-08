@@ -21,7 +21,7 @@ class ContactsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
 //    facebook friends
-    var friends: NSArray = []
+    var friends: [CustomFBProfile] = []
     
 //    //contacts
 //    let contactStore = CNContactStore()
@@ -79,7 +79,7 @@ class ContactsViewController: UIViewController {
     
     
     func loadFriendsList() {
-        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "id"], HTTPMethod: "GET")
+        let graphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "id, name, picture"], HTTPMethod: "GET")
         
         graphRequest.startWithCompletionHandler { (connection: FBSDKGraphRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
             if error != nil {
@@ -89,13 +89,19 @@ class ContactsViewController: UIViewController {
                 let resultDict = result as! NSDictionary
                 print("Result Dict: \(resultDict)")
                 
-                self.friends = resultDict.objectForKey("data") as! NSArray
+                let data = resultDict.objectForKey("data") as! NSArray
                 
-                for i in 0 ..< self.friends.count {
-                    let valueDict = self.friends[i] as! NSDictionary
+                for i in 0 ..< data.count {
+                    let valueDict = data[i] as! NSDictionary
                     let id = valueDict.objectForKey("id") as! String
-                    print("the id value is \(id)")
+                    let name = valueDict.objectForKey("name") as! String
+                    let pictureData = (valueDict.objectForKey("picture") as! NSDictionary).objectForKey("data") as! NSDictionary
+                    let pictureURL = pictureData.objectForKey("url") as! String
+                    
+                    self.friends.append(CustomFBProfile(userID: id, name: name, pictureURL: pictureURL))
                 }
+                
+                self.tableView.reloadData()
                 
                 print("Found \(self.friends.count) friends")
             }
@@ -125,6 +131,8 @@ extension ContactsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactsTableViewCell
         
 //        cell.contact = contacts[indexPath.row]
+        
+        cell.profile = friends[indexPath.row]
         
         return cell
     }
