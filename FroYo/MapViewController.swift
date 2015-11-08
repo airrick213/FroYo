@@ -110,6 +110,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     let distanceInMilesRounded = round(distanceInMiles * 100.0) / 100.0
     distanceLabel.text = "\(distanceInMilesRounded) Miles away"
   }
+  
+  func printGoogleAddress(business: Business) {
+    let address = "\(business.address!) \(business.city!) \(business.stateCode!)"
+    let addressNoCommas = address.stringByReplacingOccurrencesOfString(",", withString: "")
+    let urlAddress = addressNoCommas.stringByReplacingOccurrencesOfString(" ", withString: "+")
+    
+    print(business.city!)
+    print("https://www.google.com/maps/place/\(urlAddress)")
+  }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -180,6 +189,7 @@ extension MapViewController: MKMapViewDelegate {
     centerMapOnLocation(convertHashLocationToCoordinate(business))
     getDistanceInMilesAndUpdateLabel(currentUserLocation!, point2: convertHashLocationToCoordinate(business))
     checkButtonEnabling()
+    printGoogleAddress(business)
   }
   
   func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
