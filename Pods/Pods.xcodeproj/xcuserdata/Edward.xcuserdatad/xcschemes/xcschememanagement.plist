@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBSDKMessengerShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,37 +67,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02B684C7E40903282D00AF7564C3796C</key>
+		<key>4FFBB144636E8CC80CC419E1F9055E4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>27AEC4951CA0CF673732D2C40645233F</key>
+		<key>81DEC6705A13296B07FFD14820FE8E83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AC620CDBED16D63D4170D28966912C5</key>
+		<key>8F63170B6ED5D919FFD176545A8AA9BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BD928EDCE8D07B51A583B8409E9DC95</key>
+		<key>917CFCEA9D6CD49845C8F3E6F16A1AC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52EC7C28C8B27E5B5D594B733AA6D7EE</key>
+		<key>A119C3644A89BD4966DF991DAD65ADDE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>807B420693F4D8DB02D2E433F96D36C9</key>
+		<key>A4BBC8C3B3FC30DD0659109D78CD5958</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF1D1BD023D77251948C8B758845D9A6</key>
+		<key>A869EB04B5218D3C787825125C03D5B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC3203739FEB9C6120DEBE5CDDBAEAC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B03C67646F4C8D4988C2B3C34095BA00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5CE235BFC722A72DCDFE12CAA79A6ED</key>
+		<key>C7BD5453A9010452E2656D1F611EE34D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EEA0C0E5253853A2373725A12FBA28AE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F7768CC98967ED1B935AB90B2E885049</key>
+		<key>FD2AD8CD2C8CE4484F7BDCB666428AF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

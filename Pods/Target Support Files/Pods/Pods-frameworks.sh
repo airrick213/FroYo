@@ -59,6 +59,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/ConvenienceKit.framework'
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
+  install_framework 'Pods/FBSDKMessengerShareKit.framework'
   install_framework 'Pods/MBProgressHUD.framework'
   install_framework 'Pods/SwiftyJSON.framework'
 fi
@@ -70,6 +71,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/ConvenienceKit.framework'
   install_framework 'Pods/FBSDKCoreKit.framework'
   install_framework 'Pods/FBSDKLoginKit.framework'
+  install_framework 'Pods/FBSDKMessengerShareKit.framework'
   install_framework 'Pods/MBProgressHUD.framework'
   install_framework 'Pods/SwiftyJSON.framework'
 fi
