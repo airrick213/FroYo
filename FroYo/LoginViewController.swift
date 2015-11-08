@@ -15,21 +15,23 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if FBSDKAccessToken.currentAccessToken() != nil {
-//            presentContactsViewController()
-//        }
-//        else {
-            let loginButton: FBSDKLoginButton = FBSDKLoginButton.init()
-            
-            loginButton.center = self.view.center
-            loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-            loginButton.delegate = self
-            
-            self.view.addSubview(loginButton)
-//        }
     }
-    
+  
+  override func viewDidAppear(animated: Bool) {
+    if FBSDKAccessToken.currentAccessToken() != nil {
+      presentContactsViewController()
+    }
+    else {
+      let loginButton: FBSDKLoginButton = FBSDKLoginButton.init()
+      
+      loginButton.center = self.view.center
+      loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+      loginButton.delegate = self
+      
+      self.view.addSubview(loginButton)
+    }
+  }
+  
     func presentContactsViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let contactsViewController = storyboard.instantiateViewControllerWithIdentifier("ContactsViewController") as! ContactsViewController
